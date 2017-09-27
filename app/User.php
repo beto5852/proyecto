@@ -2,18 +2,23 @@
 
 namespace App;
 
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Authorizable, CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
+    
+    protected $table = 'users';
+    
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -26,4 +31,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function telefonos(){
+     return $this->hasMany('APP\Telefono');
+    }
+    public function practicas(){
+        return $this->hasMany('APP\Practica');
+    }
+    public function notificaciones(){
+        return $this->hasMany('APP\Notificacion');
+    }
 }
