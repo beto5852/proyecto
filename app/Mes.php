@@ -1,0 +1,19 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Mes extends Model
+{
+    //
+    protected $table = 'mes';
+
+    protected $fillable = ['nombre_mes'];
+    
+    public function semanas()
+    {
+        return $this->belongsToMany('App\Semana')->withTimestamps();
+    }
+    
+}
