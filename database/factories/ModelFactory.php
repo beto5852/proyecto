@@ -115,7 +115,6 @@ $factory->define(App\Etapa::class, function (Faker\Generator $faker) {
     return [
         'nombre_etapa' => $faker->sentence,
         'descripcion_etapa' => $faker->paragraph,
-        'ce_id_cultivo' => App\Cultivo::all()->random()->id,
     ];
 });
 
