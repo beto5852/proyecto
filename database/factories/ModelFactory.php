@@ -77,7 +77,7 @@ $factory->define(App\Rubro::class, function (Faker\Generator $faker) {
 
 /************************Tecnologia************************************/
 
-$factory->define(App\Rubro::class, function (Faker\Generator $faker) {
+$factory->define(App\Tenologia::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_tecnologia' => $faker->sentence,
