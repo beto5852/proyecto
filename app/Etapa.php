@@ -13,6 +13,6 @@ class Etapa extends Model
 
       public function cultivos()
     {
-        return $this->belongsToMany('App\Cultivo');
+        return $this->belongsToMany('App\Cultivo','ce')->withPivot('ce_id_cultivo')->withTimestamps();
     }
 }

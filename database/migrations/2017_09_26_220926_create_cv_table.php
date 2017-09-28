@@ -15,6 +15,7 @@ class CreateCvTable extends Migration
     {
         Schema::create('cv', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descripcion_caracteristica')->nullable();
 
             $table->integer('cv_id_caracteristica')->unsigned();;
             $table->foreign('cv_id_caracteristica')->references('id')->on('caracteristicas');

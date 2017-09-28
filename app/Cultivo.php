@@ -13,7 +13,7 @@ class Cultivo extends Model
 
     public function etapas()
     {
-        return $this->belongsToMany('App\Etapa')->withTimestamps();
+        return $this->belongsToMany('App\Etapa','ce')->withPivot('ce_id_etapa')->withTimestamps();
     }
 
     public function rubros()

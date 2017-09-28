@@ -14,9 +14,8 @@ class Variedad extends Model
 
     public  function caracteristicas()
     {
-       // return $this->belongsToMany('App\Caracteristica','cv','cv_id_caracteristica','cv_id_variedad')->withTimestamps();
 
-        return $this->belongsToMany('App\Caracteristica')->withTimestamps();
+        return $this->belongsToMany('App\Caracteristica','cv')->withPivot('cv_id_caracteristica','descripcion_caracteristica')->withTimestamps();
     }
     public function cultivos()
     {

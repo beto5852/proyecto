@@ -13,7 +13,7 @@ class Mes extends Model
     
     public function semanas()
     {
-        return $this->belongsToMany('App\Semana')->withTimestamps();
+        return $this->belongsToMany('App\Semana','ms')->withPivot('ms_id_semana')->withTimestamps();
     }
     
 }

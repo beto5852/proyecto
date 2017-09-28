@@ -8,15 +8,12 @@ class Caracteristica extends Model
 {
     protected $table = 'caracteristicas';
 
-    protected $fillable =['nombre_caracteristica','descripcion_caracteristica'];
+    protected $fillable =['nombre_caracteristica'];
 
 
     public  function variedades()
     {
-       // return $this->belongsToMany('App\Variedad','cv','cv_id_caracteristica','cv_id_variedad')->withTimestamps();
-
-        return $this->belongsToMany('App\Variedad')->withTimestamps();
+        return $this->belongsToMany('App\Variedad','cv')->withPivot('cv_id_variedad','descripcion_caracteristica')->withTimestamps();
     }
-
 
 }

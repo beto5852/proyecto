@@ -16,11 +16,11 @@ class Semana extends Model
 
     public function mes()
     {
-        return $this->belongsToMany('App\Mes')->withTimestamps();
+        return $this->belongsToMany('App\Mes','ms')->withPivot('ms_id_mes')->withTimestamps();
     }
     public  function practicas()
     {
-        return $this->belongsToMany('App\Practica')->withTimestamps();
+        return $this->belongsToMany('App\Practica','ps')->withPivot('ps_id_semana')->withTimestamps();
     }
 
 }

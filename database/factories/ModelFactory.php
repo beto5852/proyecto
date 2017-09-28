@@ -24,25 +24,24 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 /**************************Usuario Administrado********************************/
-$factory->define(App\User::class,'admin', function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name($gender = null|'male'|'female'),
+$factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
+   return [
+        'name' => $faker->name,
         'email' => $faker->email,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'password' => bcrypt('secret'),
         'type'=> 'admin',
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(App\User::class,'miembro', function (Faker\Generator $faker) {
-    static $password;
 
+/**************************Usuario miembro********************************/
+
+$factory->defineAs(App\User::class,'miembro', function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name($gender = null|'male'|'female'),
+        'name' => $faker->name,
         'email' => $faker->email,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'type'=> 'admin',
+        'password' => bcrypt('secret'),
+        'type'=> 'miembro',
         'remember_token' => str_random(10),
     ];
 });
@@ -58,23 +57,53 @@ $factory->define(App\Telefono::class, function (Faker\Generator $faker) {
 });
 /******************Notificaciones**************************************/
 
-$factory->define(App\Tenologia::class, function (Faker\Generator $faker) {
+$factory->define(App\Notificacion::class, function (Faker\Generator $faker) {
 
     return [
-        'nombre_practica' => $faker->name,
+        'Mensaje' => $faker->paragraph,
+        'id_usuario_envia'=> App\User::all()->random()->id,
+        'id_usuario_recibe' => App\User::all()->random()->id,
+    ];
+});
+/************************Practicas***************************************************/
+
+$factory->define(App\Practica::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre_practica' => $faker->sentence,
         'contenido' => $faker->paragraph,
         'tags' => $faker->word,
         'practica_id_tecnologia'=> App\Tenologia::all()->random()->id,
         'practica_id_usuario' => App\User::all()->random()->id,
     ];
 });
-
-
-$factory->define(App\Practica::class, function (Faker\Generator $faker) {
+/***************************variedad**********************************************************/
+$factory->define(App\Variedad::class, function (Faker\Generator $faker) {
 
     return [
-        'nombre_practica' => $faker->sentence,
-        'practica_id_tecnologia'=> App\Tenologia::all()->random()->id,
-        'practica_id_usuario' => App\User::all()->random()->id,
+        'nombre_variedad' => $faker->sentence,
+        'cultivos_id_rubro'=> App\Cultivo::all()->random()->id,
     ];
 });
+
+
+/************************Rubro************************************/
+
+$factory->define(App\Rubro::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre_rubro' => $faker->sentence,
+        'descripcion_rubro' => $faker->paragraph,
+   ];
+});
+
+/************************Tecnologia************************************/
+
+$factory->define(App\Rubro::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre_rubro' => $faker->sentence,
+        'descripcion_rubro' => $faker->paragraph,
+    ];
+});
+
