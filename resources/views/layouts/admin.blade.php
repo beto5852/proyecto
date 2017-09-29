@@ -31,14 +31,38 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+                <a class="navbar-brand" href="javascript:void(0)">APP INTA</a>
             </div>
             <div class="navbar-collapse collapse navbar-inverse-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="javascript:void(0)">Active</a></li>
-                    <li><a href="javascript:void(0)">Link</a></li>
                     <li class="dropdown">
-                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li><a href="javascript:void(0)">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="javascript:void(0)">Separated link</a></li>
+                            <li><a href="javascript:void(0)">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Tecnologias
+                            <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="javascript:void(0)">Action</a></li>
+                            <li><a href="javascript:void(0)">Another action</a></li>
+                            <li><a href="javascript:void(0)">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Dropdown header</li>
+                            <li><a href="javascript:void(0)">Separated link</a></li>
+                            <li><a href="javascript:void(0)">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Cultivos
                             <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)">Action</a></li>
@@ -53,13 +77,12 @@
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
-                        <input type="text" class="form-control col-sm-8" placeholder="Search">
+                        <input type="text" class="form-control col-sm-8" placeholder="Buscar Práctica Agricola">
                     </div>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="javascript:void(0)">Link</a></li>
                     <li class="dropdown">
-                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown
+                        <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Nombre de Usuario
                             <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)">Action</a></li>
@@ -69,56 +92,11 @@
                             <li><a href="javascript:void(0)">Separated link</a></li>
                         </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
     </div>
-
-    <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    APP INTA
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
-
-
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Acceder</a></li>
-                        <li><a href="{{ url('/register') }}">Registrarse</a></li>
-
-                    @else
-
-
-
-
-
-
-                    @endif
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     @yield('content')
 </div>
