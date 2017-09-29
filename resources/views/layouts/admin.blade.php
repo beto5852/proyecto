@@ -13,7 +13,6 @@
     <!-- Styles -->
     <link href="{{ url('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.css">
@@ -37,7 +36,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                         <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Usuarios
-                            <b class="caret"></b></a>
+                        <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="javascript:void(0)">Action</a></li>
                             <li><a href="javascript:void(0)">Another action</a></li>
