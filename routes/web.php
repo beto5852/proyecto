@@ -13,10 +13,20 @@
 
 Route::get('/', 'MainController@home');
 
-Auth::routes();
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::resource('/users','UsersController@index');
+    Route::resource('/practicas','PracticasController');
+
+});
+
+
+//Auth::routes();
 //controlador de recurso
 
-Route::resource('/products','ProductsController');
+
+
 /* rutas que se generarian
     GET /products => index  muestra coleccion
     POST /products => store  guardaria el producto

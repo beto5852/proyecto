@@ -1,9 +1,36 @@
 
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+.navbar-default.navbar{
+  background-color: #00b3ee;
+}
+
+.navbar{
+  margin-bottom: 2px;
+}
+
+.big-padding{
+  padding: 30px;
+}
+.blue-grey{
+  background-color: #37474f;
+}
+.white{
+  background-color: white;
+}
+
+.white-text{
+  color: white;
+}
+
+.table{
+  background-color: white;
+}
+
+.floating{
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 50;
+}

@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Practica extends Model
 {
     //
-    //use Sluggable;
+    use Sluggable;
 
 
     protected $table = 'practicas';
 
-   // protected $fillable = ['nombre_practica','contenido','path','tags','slug','practica_id_tecnologia','practica_id_usuario'];
-    protected $fillable = ['nombre_practica','contenido','path','tags','slug'];
+    protected $fillable = ['nombre_practica','contenido','path','tags','practica_id_tecnologia','practica_id_usuario'];
+    //protected $fillable = ['nombre_practica','contenido','path','tags','slug'];
 
 
-    /* public function sluggable()
+  public function sluggable()
      {
          return [
              'slug' => [
@@ -25,7 +25,7 @@ class Practica extends Model
              ]
          ];
      }
- */
+
 
     public function semanas()
     {
