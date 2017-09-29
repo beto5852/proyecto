@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Semana extends Model
 {
-    use Notifiable, Authorizable, CanResetPassword;
-
 
     protected $table = 'semanas';
 

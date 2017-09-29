@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Faker\Factory as Faker;
 
 class MesTableSeeder extends Seeder
 {
@@ -14,47 +15,16 @@ class MesTableSeeder extends Seeder
     {
         //
         
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Enero'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Febrero'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Marzo'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Abril'
-        ]);
+        $meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+        
+        for($i = 0; $i < 12; $i++){
+            \DB::table('mes')->insert(array(
 
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Mayo'
-        ]);
+                'nombre_mes' => $meses[$i],
 
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Junio'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Julio'
-        ]);
-
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Agosto'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Septiembre'
-        ]);
-
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Octubre'
-        ]);
-
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Noviembre'
-        ]);
-        DB::table('mes')->insert([
-            'nombre_mes'=> 'Diciembre'
-        ]);
-
+            ));
+                        
+        }
+                     
     }
 }

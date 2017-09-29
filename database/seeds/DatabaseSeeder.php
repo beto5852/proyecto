@@ -13,12 +13,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        /*$this->call(EtapaTableSeeder::class);
-        $this->call(MesTableSeeder::class);
-        $this->call(RubroTableSeeder::class);
-        $this->call(SemanasTableSeeder::class);
-        $this->call(TecnologiaTableSeeder::class);
-        $this->call(VariedadTableSeeder::class);*/
+        
         factory('App\User','admin',3)->create();
         factory('App\User','miembro',10)->create();
         factory('App\Telefono',13)->create();
@@ -30,6 +25,15 @@ class DatabaseSeeder extends Seeder
         factory('App\Variedad',10)->create();
         factory('App\Caracteristica',10)->create();
         /*factory('App\Practica',30)->create();*/
+        $this->call(PracticaTableSeeder::class);
+        $this->call(TrTableSeeder::class);
+        $this->call(MesTableSeeder::class);
+        $this->call(SemanasTableSeeder::class);
+        $this->call(PsTableSeeder::class);
+        $this->call(MsTableSeeder::class);
+        $this->call(CeTableSeeder::class);
+        $this->call(CvTableSeeder::class);
+       
 
         Model::unguard();
     }

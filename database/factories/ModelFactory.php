@@ -86,17 +86,18 @@ $factory->define(App\Tenologia::class, function (Faker\Generator $faker) {
 });
 
 /************************Practicas***************************************************/
-
+/*
 $factory->define(App\Practica::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_practica' => $faker->sentence,
         'contenido' => $faker->paragraph,
         'tags' => $faker->word,
+        
         'practica_id_tecnologia'=> App\Tenologia::all()->random()->id,
         'practica_id_usuario' => App\User::all()->random()->id,
     ];
-});
+});*/
 /************************Cultivos************************************/
 
 $factory->define(App\Cultivo::class, function (Faker\Generator $faker) {
@@ -123,7 +124,7 @@ $factory->define(App\Variedad::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_variedad' => $faker->sentence,
-        'cultivos_id_rubro'=> App\Cultivo::all()->random()->id,
+        'variedada_id_cultivo'=> App\Cultivo::all()->random()->id,
     ];
 });
 
@@ -132,7 +133,6 @@ $factory->define(App\Caracteristica::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_caracteristica' => $faker->sentence,
-        'cv_id_variedad'=> App\Variedad::all()->random()->id,
     ];
 });
 
