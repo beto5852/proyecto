@@ -27,10 +27,11 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
-    <div class="floating">
-        <a href="{{url('/practicas/create')}}" class="btn btn-primary btn-fab">
-            <i class="material-icons">add</i>
-        </a>
+
+        <div class="floating">
+            <a href="{{url('admin/practicas/create')}}" class="btn btn-primary btn-fab">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
     </div>
 @endsection

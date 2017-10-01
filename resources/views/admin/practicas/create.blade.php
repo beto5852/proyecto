@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -13,7 +13,7 @@
             {{ Form::textarea('tags','',['class' => 'form-control','placeholder' => 'Título...']) }}
         </div>
         <div class="form-group text-right">
-            <a href="{{url('/practicas')}}">Regrese a la lista de prácticas</a>
+            <a href="{{url('/admin/practicas')}}">Regrese a la lista de prácticas</a>
             <input type="submit" value="Enviar" class="btn btn-success">
         </div>
 

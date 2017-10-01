@@ -1,6 +1,7 @@
 
 // Variables
 @import "variables";
+@import "~font-awesome/scss/font-awesome.scss";
 
 .navbar-default.navbar{
   background-color: #00b3ee;
@@ -32,5 +33,5 @@
   position: fixed;
   bottom: 2em;
   right: 2em;
-  z-index: 50;
+  z-index: 100;
 }

@@ -18,7 +18,7 @@ class PracticasController extends Controller
         //mostrar algunos Productos
         
         $practicas = Practica::all();        
-        return view("practicas.index",['practicas' => $practicas]);
+        return view("admin.practicas.index",['practicas' => $practicas]);
     }
 
     /**
@@ -29,7 +29,7 @@ class PracticasController extends Controller
     public function create()
     {
         //
-        return view('practicas.create');
+        return view('admin.practicas.create');
     }
 
     /**
