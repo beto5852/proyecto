@@ -15,10 +15,11 @@
         <table class="table table-striped table-hover" >
             <thead>
             <tr >
-                <td>Nombre y Apellidos</td>
-                <td>Correo</td>
-                <td>Tipo usuario</td>
-                <td>Acciones</td>
+                <td><strong>Nombre y Apellidos</strong></td>
+                <td><strong>Correo</strong></td>
+                <td><strong>Tipo usuario</strong></td>
+                <td><strong>Acciones</strong></td>
+
             </tr>
             </thead>
             <tbody>
