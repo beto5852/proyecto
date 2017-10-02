@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','<i class="fa fa-list" aria-hidden="true"> Lista de usuarios </i>')
+@section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Lista de usuarios ')
 
 @section('content')
 
