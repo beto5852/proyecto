@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 
-@section('title','Lista de Practicas')
+@section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Lista de Practicas')
 
 
 @section('content')
@@ -23,8 +23,8 @@
                     <td>{{  $practica->nombre_practica}}</td>
                     <td>{{  $practica->contenido}}</td>
                     <td>
-                        <a href="#" class="btn btn-raised btn-primary" role="button">Editar</a>
-                        <a href="#" class="btn btn-raised btn-danger" role="button">Eliminar</a>
+                        <a href="#" class="btn btn-raised btn-primary" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-raised btn-danger" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
                     </td>
                 </tr>

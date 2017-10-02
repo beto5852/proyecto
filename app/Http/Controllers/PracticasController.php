@@ -17,7 +17,7 @@ class PracticasController extends Controller
     {
         //mostrar algunos Productos
         
-        $practicas = Practica::orderBy('id','ASC')->paginate(6);      
+        $practicas = Practica::orderBy('id','ASC')->paginate(4);      
         return view("admin.practicas.index",['practicas' => $practicas]);
     }
 
