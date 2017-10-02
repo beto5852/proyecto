@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Redirect;
 
 class UsersController extends Controller
 {
@@ -15,7 +16,7 @@ class UsersController extends Controller
     public function index()
     {
         //
-       $users = User::orderBy('id','ASC')->paginate(5);
+       $users = User::orderBy('id','ASC')->paginate(9);
        // dd($users);
        return view("admin.users.index",['users' => $users]);
 
@@ -28,7 +29,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+
+        return view("admin.users.create");
+        //return 'esta es una prueba';
     }
 
     /**
@@ -40,6 +43,10 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new User($request->all());
+        $user->password = bcrypt($request->password);
+        $user->save();
+        //dd($user);
     }
 
     /**

@@ -24,18 +24,13 @@
 
     @include('partials.navadmin')
 
-
     <div class="container">
-        <div class="big-padding text-center blue-grey white-text">
 
-        </div>
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title"> @yield('title')</h3>
 
             </div>
-
-
             <div class="panel-body">
                 @yield('content')
             </div>

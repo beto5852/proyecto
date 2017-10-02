@@ -11,12 +11,14 @@
 |
 */
 
-Route::get('/', 'MainController@home');
 
+Route::get('/', 'MainController@home');
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::resource('/users','UsersController@index');
+    //
+   // Auth::routes();
+    Route::resource('/users','UsersController');
     Route::resource('/practicas','PracticasController');
 
 });

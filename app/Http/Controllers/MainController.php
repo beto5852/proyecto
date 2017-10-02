@@ -11,7 +11,7 @@ class MainController extends Controller
 
     public function home(){
         //return view('main.home',["name"=>"Esta es una prueba"]);
-        return view('main.home',[]);
+        return view('admin.main.home');
     }
 
 
