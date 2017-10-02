@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 use Redirect;
 
 class UsersController extends Controller
@@ -46,6 +47,8 @@ class UsersController extends Controller
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
+        Session::flash('message','Usuario registrado correctamente');
+        return redirect::to('admin/users');
         //dd($user);
     }
 
