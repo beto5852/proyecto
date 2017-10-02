@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Lista de usuarios')
+@section('title','<i class="fa fa-list" aria-hidden="true"> Lista de usuarios </i>')
 
 @section('content')
 
@@ -21,8 +21,8 @@
                     <td>{{  $user->email}}</td>
                     <td>{{  $user->type}}</td>
                     <td>
-                        <a href="#" class="btn btn-raised btn-success" role="button">Editar</a>
-                        <a href="#" class="btn btn-raised btn-warning" role="button">Eliminar</a>
+                        <a href="#" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="#" class="btn btn-raised btn-warning" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             @endforeach

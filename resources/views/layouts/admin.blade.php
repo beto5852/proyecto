@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Administracion') }}</title>
 
     <!-- Styles -->
+    <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ url('/css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -51,10 +52,10 @@
 </script>
 <script>
     var options = {
-        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+       filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+       filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+       filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+       filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
 
     CKEDITOR.replace('body', options);
