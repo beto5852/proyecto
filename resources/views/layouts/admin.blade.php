@@ -29,7 +29,6 @@
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title"> @yield('title')</h3>
-
             </div>
             <div class="panel-body">
                 @yield('content')
@@ -42,12 +41,23 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 <script>
     $.material.init();
+</script>
+<script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+
+    CKEDITOR.replace('body', options);
 </script>
 <script src="/js/app.js"></script>
 </body>

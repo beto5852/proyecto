@@ -28,6 +28,11 @@
             @endforeach
             </tbody>
         </table>
-        {{ $users->links() }}
+        <center>{{ $users->links() }}</center>
+        <div class="floating">
+            <a href="{{url('admin/users/create')}}" class="btn btn-primary btn-fab">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
 
 @endsection

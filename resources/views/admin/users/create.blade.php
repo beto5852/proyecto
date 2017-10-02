@@ -21,8 +21,8 @@
 
         {{ Form::password('password',['class' => 'form-control','placeholder' => 'password','required']) }}
     </div>
-    <div class="form-group">
 
+    <div class="form-group">
         {{ Form::label('type','Tipo de usuario') }}
         {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],null,['class' => 'form-control'])}}
     </div>

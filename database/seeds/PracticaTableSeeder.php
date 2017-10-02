@@ -18,7 +18,7 @@ class PracticaTableSeeder extends Seeder
         for($i = 0; $i<20; $i++){
             $title = $faker->sentence;
             $body = $faker->paragraph;
-            //$path = $faker->file(public_path('images/uploads/tmp'), public_path('images/uploads'), false);
+            //$path = $faker->file(public_path('photos/uploads/tmp'), public_path('photos/uploads'), false);
             $tags = $faker->word;
             $slug = Str::slug($title);
             \DB::table('practicas')->insert(array(
