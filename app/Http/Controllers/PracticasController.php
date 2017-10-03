@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Practica;
 
+use Session;
+use Redirect;
+
 class PracticasController extends Controller
 {
     /**
@@ -41,6 +44,11 @@ class PracticasController extends Controller
     public function store(Request $request)
     {
         //Guarda productos
+        $practica = new Practica($request->all());
+        $practica->save();
+        Session::flash('message','Labor agricola registrado correctamente');
+        return redirect::to('admin/practicas');
+        //dd($user);
     }
 
     /**

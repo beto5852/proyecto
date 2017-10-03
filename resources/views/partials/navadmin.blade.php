@@ -14,18 +14,18 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Usuarios
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Crear usuarios</a></li>
-                        <li><a href="#">Listar Usuarios</a></li>
+                        <li><a href="{{url('admin/users/create')}}">Crear usuarios</a></li>
+                        <li><a href="{{url('admin/users/')}}">Listar Usuarios</a></li>
 
                     </ul>
                 </li>
 
                 <li class="dropdown">
-                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Prácticas
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Prácticas Agricola
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Crear usuarios</a></li>
-                        <li><a href="#">Listar Usuarios</a></li>
+                        <li><a href="{{url('admin/practicas/create')}}">Crear práctica</a></li>
+                        <li><a href="{{url('admin/practicas/')}}">Listar prácticas</a></li>
 
                     </ul>
                 </li>
@@ -34,26 +34,20 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Tecnologias
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#  ">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Dropdown header</li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
-                        <li><a href="javascript:void(0)">One more separated link</a></li>
+                        <li><a href="#">Crear tecnologia</a></li>
+                        <li><a href="#">Listar tecnologia</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="index.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Cultivos
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Cultivos
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="javascript:void(0)">Action</a></li>
-                        <li><a href="javascript:void(0)">Another action</a></li>
-                        <li><a href="javascript:void(0)">Something else here</a></li>
+                        <li><a href="#">Agregar Cultivo</a></li>
+                        <li><a href="#">Listar cultivos</a></li>
                         <li class="divider"></li>
-                        <li class="dropdown-header">Dropdown header</li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
-                        <li><a href="javascript:void(0)">One more separated link</a></li>
+                        <li><a href="#">Agregar etapa de siembra</a></li>
+                        <li><a href="#">Listar etapas de siembra</a></li>
+
                     </ul>
                 </li>
             </ul>
@@ -69,9 +63,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">Editar Perfil</a></li>
                         <li><a href="#">Salir</a></li>
-                        <li><a href="j#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="javascript:void(0)">Separated link</a></li>
+
                     </ul>
                 </li>
 
