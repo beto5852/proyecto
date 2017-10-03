@@ -1,0 +1,50 @@
+@extends('layouts.admin')
+
+@section('title','Editar Usuario')
+
+@section('content')
+    @if(count($errors) > 0)
+
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <ul>
+                @foreach($errors->all() as $mensaje)
+                    <li>{{$mensaje}}</li>
+                @endforeach
+            </ul>
+        </div>
+
+        @endif
+
+                <!--Aqui va el formulario de la practica agricola-->
+        {!! Form::open(['url' => ['admin/users',$user], 'method' => 'PUT']) !!}
+        <div class="form-group">
+            {!! Form::label('name','Nombre') !!}
+            {!! Form::text('name',$user->name,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])!!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('email','Correo electrónico') !!}
+            {!! Form::email('email',$user->email,['class' =>'form-control', 'placeholder' =>'example@gmail.com','required'])!!}
+        </div>
+
+
+        <div class="form-group">
+            {{ Form::label('sexo','Sexo') }}
+            {{ Form::select('sexo',['' => 'Seleccione una opción' , 'masculino' => 'mascúlino', 'femenino' => 'femenino'],null,['class' => 'form-control'])}}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('type','Tipo de usuario') }}
+            {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],null,['class' => 'form-control'])}}
+        </div>
+
+        <div class="form-group text-right">
+            <a href="{{url('admin/users')}}" class="text-info">Lista de usuarios</a>
+            {{ Form::submit('Actualizar', ['class' => 'btn btn-info']) }}
+
+        </div>
+        {!! Form::close() !!}
+
+
+@endsection
