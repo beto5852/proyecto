@@ -29,7 +29,7 @@
                     <td>{{  $user->email}}</td>
                     <td>{{  $user->type}}</td>
                     <td>
-                        <a href="#" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{url('admin/users/'.$user->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#" class="btn btn-raised btn-warning" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                 </tr>
