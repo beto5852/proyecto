@@ -18,7 +18,9 @@ Route::group(['prefix' => 'admin'], function () {
     //
    // Auth::routes();
     Route::resource('/users','UsersController');
+    Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
+
 
 });
 
@@ -26,6 +28,12 @@ Route::get('users/{id}',[
     'uses' => "UsersController@destroy",
     'as'   =>  "users.destroy"
 ]);
+
+Route::get('tecnologias/{id}',[
+    'uses' => "TecnologiasController@destroy",
+    'as'   =>  "tecnologias.destroy"
+]);
+
 
 //Auth::routes();
 //controlador de recurso

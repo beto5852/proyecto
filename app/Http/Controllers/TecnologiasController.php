@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tecnologia;
+use Session;
+use Redirect;
 
 class TecnologiasController extends Controller
 {
@@ -13,7 +16,10 @@ class TecnologiasController extends Controller
      */
     public function index()
     {
-        //
+        
+        $tecnologias =  Tecnologia::orderBy('id','DESC')->paginate(5);
+        // dd($users);
+        return view("admin.tecnologias.index",['tecnologias' => $tecnologias]);
     }
 
     /**
@@ -24,6 +30,7 @@ class TecnologiasController extends Controller
     public function create()
     {
         //
+        return view('admin.tecnologias.create');
     }
 
     /**
@@ -35,6 +42,10 @@ class TecnologiasController extends Controller
     public function store(Request $request)
     {
         //
+        $tecnologias = new Tecnologia($request->all());
+        $tecnologias->save();
+        Session::flash('message','Tecnolóogia registrada correctamente');
+        return redirect::to('admin/tecnologias');
     }
 
     /**
@@ -57,6 +68,9 @@ class TecnologiasController extends Controller
     public function edit($id)
     {
         //
+        $tecnologias = Tecnologia::find($id);
+        return view('admin.tecnologias.edit',compact('tecnologia'));
+        //dd($tecnologias);
     }
 
     /**

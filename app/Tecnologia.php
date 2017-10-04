@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tenologia extends Model
+class Tecnologia extends Model
 {
-    //
     protected $table = 'tecnologias';
 
     protected $fillable =['nombre_tecnologia','descripcion_tecnologia'];
@@ -21,4 +20,3 @@ class Tenologia extends Model
 
     }
 }
-

@@ -35,8 +35,8 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Tecnologias
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Crear tecnologia</a></li>
-                        <li><a href="#">Listar tecnologia</a></li>
+                        <li><a href="{{url('admin/tecnologias/create')}}">Crear tecnologia</a></li>
+                        <li><a href="{{url('admin/tecnologias/')}}">Listar tecnologia</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
