@@ -15,10 +15,10 @@
         <table class="table table-striped table-hover" >
             <thead>
             <tr >
-                <td><strong>Nombre y Apellidos</strong></td>
-                <td><strong>Correo</strong></td>
-                <td><strong>Tipo usuario</strong></td>
-                <td><strong>Acciones</strong></td>
+                <th>Nombre y Apellidos</></th>
+                <th>Correo</th>
+                <th>Tipo usuario</th>
+                <th>Acciones</th>
 
             </tr>
             </thead>
@@ -30,7 +30,8 @@
                     <td>{{  $user->type}}</td>
                     <td>
                         <a href="{{url('admin/users/'.$user->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a href="#" class="btn btn-raised btn-warning" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        <a href="{{url('users/'.$user->id)}}" class="btn btn-raised btn-warning" role="button"
+                           onclick="return confirm('Esta seguro de eliminar al usuario')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     </td>
                 </tr>
             @endforeach

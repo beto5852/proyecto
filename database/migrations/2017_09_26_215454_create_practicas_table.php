@@ -25,7 +25,7 @@ class CreatePracticasTable extends Migration
             $tabla->foreign('practica_id_tecnologia')->references('id')->on('tecnologias');
             
             $tabla->integer('practica_id_usuario')->unsigned()->nullable();          
-            $tabla->foreign('practica_id_usuario')->references('id')->on('users');
+            $tabla->foreign('practica_id_usuario')->references('id')->on('users')->onDelete('');
 
             $tabla->timestamps();
 

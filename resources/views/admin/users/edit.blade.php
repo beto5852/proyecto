@@ -31,20 +31,23 @@
 
         <div class="form-group">
             {{ Form::label('sexo','Sexo') }}
-            {{ Form::select('sexo',['' => 'Seleccione una opción' , 'masculino' => 'mascúlino', 'femenino' => 'femenino'],null,['class' => 'form-control'])}}
+            {{ Form::select('sexo',['' => 'Seleccione una opción' , 'masculino' => 'mascúlino', 'femenino' => 'femenino'],$user->sexo,['class' => 'form-control'])}}
         </div>
 
         <div class="form-group">
             {{ Form::label('type','Tipo de usuario') }}
-            {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],null,['class' => 'form-control'])}}
+            {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],$user->type,['class' => 'form-control'])}}
         </div>
 
         <div class="form-group text-right">
-            <a href="{{url('admin/users')}}" class="text-info">Lista de usuarios</a>
+
+            <a href="{{url('admin/users')}}" class="btn btn-info" >Lista de usuarios</a>
             {{ Form::submit('Actualizar', ['class' => 'btn btn-info']) }}
 
         </div>
         {!! Form::close() !!}
+
+
 
 
 @endsection

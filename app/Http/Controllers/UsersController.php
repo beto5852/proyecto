@@ -98,6 +98,7 @@ class UsersController extends Controller
 
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -107,5 +108,11 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+
+        Session::flash('message','Usuario eliminado correctamente');
+        return redirect::to('admin/users');
+        //dd($id);
     }
 }

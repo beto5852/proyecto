@@ -23,6 +23,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
+Route::get('users/{id}',[
+    'uses' => "UsersController@destroy",
+    'as'   =>  "users.destroy"
+]);
 
 //Auth::routes();
 //controlador de recurso
