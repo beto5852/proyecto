@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Editar Usuario')
+@section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Editar Usuario')
 
 @section('content')
     @if(count($errors) > 0)

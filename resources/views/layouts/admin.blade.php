@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Administracion') }}</title>
+    <title>{{ config('app.name', 'Administración') }}</title>
 
     <!-- Styles -->
     <!--
@@ -35,9 +35,16 @@
 
     <div class="container">
 
+        <ul class="breadcrumb" style="margin-bottom: 5px;">
+            <li><a href="javascript:void(0)">Inicio</a></li>
+            <li><a href="javascript:void(0)">Crear usuarios</a></li>
+            <li class="active">Ver Usuarios</li>
+
+        </ul>
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title"> @yield('title')</h3>
+
             </div>
             <div class="panel-body">
                 @yield('content')
@@ -50,7 +57,7 @@
 </div>
 
 <!-- Scripts -->
-
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -61,16 +68,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
 
-<!--<script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
-<script src="{{ asset('js/material.min.js') }}"></script>
-<script src="{{ asset('js/ripples.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>-->
+
+
 
 <script>
     $.material.init();
 </script>
+
+<!--
 <<script>
     var options = {
        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -78,9 +84,9 @@
        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
-
     CKEDITOR.replace('body', options);
-</script>
+
+</script>-->
 <script src="/js/app.js"></script>
 </body>
 </html>

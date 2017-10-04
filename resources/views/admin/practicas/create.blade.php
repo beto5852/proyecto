@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Crear práctica agricola')
+@section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear práctica agricola')
 
 @section('content')
 

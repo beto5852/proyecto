@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title','Crear Usuarios')
+@section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear Usuarios')
 
 @section('content')
     @if(count($errors) > 0)
@@ -13,7 +13,6 @@
                 @endforeach
             </ul>
         </div>
-
         @endif
 
     <!--Aqui va el formulario de la practica agricola-->

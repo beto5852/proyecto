@@ -1,5 +1,4 @@
 
-
 <div class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -63,7 +62,7 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Nombre de Usuario
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{url('admin/users/'.$user->id.'/edit')}}">Editar Perfil</a></li>
+                        <li><a href="#">Editar Perfil</a></li>
                         <li><a href="#">Salir</a></li>
 
                     </ul>
@@ -76,9 +75,3 @@
 </div>
 
 
-
-<ul class="breadcrumb" style="margin-bottom: 5px;">
-    <li><a href="javascript:void(0)">Inicio</a></li>
-    <li><a href="javascript:void(0)">Crear usuarios</a></li>
-    <li class="active">Ver Usuarios</li>
-</ul>

@@ -32,7 +32,6 @@ class UsersController extends Controller
      */
     public function create()
     {
-
         return view("admin.users.create");
         //return 'esta es una prueba';
     }
@@ -110,7 +109,7 @@ class UsersController extends Controller
         //
         $user = User::find($id);
         $user->delete();
-        
+
         Session::flash('message','Usuario eliminado correctamente');
         return redirect::to('admin/users');
         //dd($id);

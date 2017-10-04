@@ -13,7 +13,6 @@
 
 
 Route::get('/', 'MainController@home');
-
 Route::group(['prefix' => 'admin'], function () {
 
     //
@@ -45,4 +44,4 @@ Route::get('users/{id}',[
 
 */
 
-Route::get('/home', 'HomeController@index');
+
