@@ -57,7 +57,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -69,14 +69,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 
 
-
-
-
 <script>
     $.material.init();
 </script>
-
-<!--
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
 <<script>
     var options = {
        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
@@ -84,9 +80,10 @@
        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
-    CKEDITOR.replace('body', options);
-
-</script>-->
+</script>
+<script>
+    CKEDITOR.replace('my-editor', options);
+</script>
 <script src="/js/app.js"></script>
 </body>
 </html>

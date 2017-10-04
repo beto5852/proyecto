@@ -27,7 +27,7 @@
             <tr class="info">
                 <td>{{  $tecnologia->id }}</td>
                 <td>{{  $tecnologia->nombre_tecnologia }}</td>
-                <td>{{  $tecnologia->descripcion_tecnologia}}</td>
+                <td>{!! $tecnologia->descripcion_tecnologia !!}</td>
                 <td>
                     <a href="#" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a href="#" class="btn btn-raised btn-warning" role="button"

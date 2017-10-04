@@ -11,8 +11,7 @@
 |
 */
 
-
-Route::get('/', 'MainController@home');
+Route::resource('/','LoginController@index');
 Route::group(['prefix' => 'admin'], function () {
 
     //
@@ -33,6 +32,8 @@ Route::get('tecnologias/{id}',[
     'uses' => "TecnologiasController@destroy",
     'as'   =>  "tecnologias.destroy"
 ]);
+
+
 
 
 //Auth::routes();

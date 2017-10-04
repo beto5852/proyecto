@@ -29,20 +29,10 @@
 <body>
 <div id="app">
 
-    @include('partials.navadmin')
+    @include('partials.navhome')
 
-    <div class="container">
         @yield('content')
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title"> @yield('title')</h3>
 
-            </div>
-            <div class="panel-body">
-
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- Scripts -->
