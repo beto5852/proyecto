@@ -14,8 +14,9 @@ class CreateMsTable extends Migration
     public function up()
     {
         Schema::create('ms', function (Blueprint $table) {
-            $table->increments('id');
+            $table->engine = 'InnoDB';
 
+            $table->increments('id');
             
             $table->integer('ms_id_mes')->unsigned();
             $table->foreign('ms_id_mes')->references('id')->on('mes');

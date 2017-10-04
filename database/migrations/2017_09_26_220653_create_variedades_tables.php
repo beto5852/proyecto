@@ -15,6 +15,8 @@ class CreateVariedadesTables extends Migration
     {
         //
         Schema::create('variedades', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->string('nombre_variedad');
             $table->integer('variedada_id_cultivo')->unsigned()->nullable();

@@ -15,6 +15,7 @@ class CreateNotificacionesTable extends Migration
     {
         //
         Schema::create('notificaciones', function(Blueprint $tabla) {
+            $tabla->engine = 'InnoDB';
 
             $tabla->increments('id');
             $tabla->text('Mensaje');

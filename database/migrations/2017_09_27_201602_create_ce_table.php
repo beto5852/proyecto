@@ -14,6 +14,8 @@ class CreateCeTable extends Migration
     public function up()
     {
         Schema::create('ce', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
 
             $table->integer('ce_id_cultivo')->unsigned();;

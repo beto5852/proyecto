@@ -15,6 +15,8 @@ class CreatePracticasTable extends Migration
     {
         Schema::create('practicas', function(Blueprint $tabla){
 
+            $tabla->engine = 'InnoDB';    
+            
             $tabla->increments('id');
             $tabla->string('nombre_practica');
             $tabla->text('contenido');
@@ -22,10 +24,10 @@ class CreatePracticasTable extends Migration
             $tabla->string('path')->nullable();
             $tabla->string('tags');
             $tabla->integer('practica_id_tecnologia')->unsigned();
-            $tabla->foreign('practica_id_tecnologia')->references('id')->on('tecnologias');
+            $tabla->foreign('practica_id_tecnologia')->references('id')->on('tecnologias')->onDelete('cascade');
             
-            $tabla->integer('practica_id_usuario')->unsigned()->nullable();          
-            $tabla->foreign('practica_id_usuario')->references('id')->on('users')->onDelete('');
+            $tabla->integer('practica_id_usuario')->unsigned();
+            $tabla->foreign('practica_id_usuario')->references('id')->on('users')->onDelete('cascade');
 
             $tabla->timestamps();
 

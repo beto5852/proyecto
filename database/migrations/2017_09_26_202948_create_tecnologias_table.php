@@ -15,6 +15,8 @@ class CreateTecnologiasTable extends Migration
     {
         //
         Schema::create('tecnologias', function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
+
             $tabla->increments('id');
             $tabla->string('nombre_tecnologia');
             $tabla->text('descripcion_tecnologia')->nulllable();

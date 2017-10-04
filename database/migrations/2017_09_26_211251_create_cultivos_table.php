@@ -15,6 +15,8 @@ class CreateCultivosTable extends Migration
     {
         //
         Schema::create('cultivos', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->string('nombre_cultivo');
 

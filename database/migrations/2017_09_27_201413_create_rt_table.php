@@ -14,6 +14,8 @@ class CreateRtTable extends Migration
     public function up()
     {
         Schema::create('rt', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
 
             $table->integer('rt_id_rubro')->unsigned();

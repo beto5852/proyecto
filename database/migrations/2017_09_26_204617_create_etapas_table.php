@@ -14,6 +14,8 @@ class CreateEtapasTable extends Migration
     public function up()
     {
         Schema::create('etapas',function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
+
             $tabla->increments('id');
             $tabla->string('nombre_etapa');
             $tabla->text('descripcion_etapa')->nullable();

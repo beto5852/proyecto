@@ -14,13 +14,15 @@ class CreatePsTable extends Migration
     public function up()
     {
         Schema::create('ps', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
 
             $table->integer('ps_id_practica')->unsigned();;
-            $table->foreign('ps_id_practica')->references('id')->on('practicas');
+            $table->foreign('ps_id_practica')->references('id')->on('practicas')->onDelete('cascade');
 
             $table->integer('ps_id_semana')->unsigned();
-            $table->foreign('ps_id_semana')->references('id')->on('semanas');
+            $table->foreign('ps_id_semana')->references('id')->on('semanas')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -14,6 +14,7 @@ class CreateRubrosTable extends Migration
     public function up()
     {
         Schema::create('rubros',function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
 
             $tabla->increments('id');
             $tabla->string('nombre_rubro');

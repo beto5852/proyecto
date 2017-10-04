@@ -1,3 +1,5 @@
+
+
 <div class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -72,3 +74,11 @@
 
     </div>
 </div>
+
+
+
+<ul class="breadcrumb" style="margin-bottom: 5px;">
+    <li><a href="javascript:void(0)">Inicio</a></li>
+    <li><a href="javascript:void(0)">Crear usuarios</a></li>
+    <li class="active">Ver Usuarios</li>
+</ul>

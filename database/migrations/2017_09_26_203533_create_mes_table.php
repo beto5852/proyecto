@@ -14,6 +14,7 @@ class CreateMesTable extends Migration
     public function up()
     {
         Schema::create('mes',function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
 
             $tabla->increments('id');
             $tabla->string('nombre_mes',45);

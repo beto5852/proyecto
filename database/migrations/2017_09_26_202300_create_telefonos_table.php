@@ -15,6 +15,8 @@ class CreateTelefonosTable extends Migration
     {
         // //Realizar Cambios
         Schema::create('telefonos',function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
+
             $tabla->string("telefono")->nullable();
             $tabla->integer('telefono_id_usuario')->unsigned();
             $tabla->foreign('telefono_id_usuario')->references('id')->on('users')->onDelete('cascade');

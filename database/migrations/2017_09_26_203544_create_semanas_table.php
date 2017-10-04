@@ -15,6 +15,7 @@ class CreateSemanasTable extends Migration
     {
         //
         Schema::create('semanas',function(Blueprint $tabla){
+            $tabla->engine = 'InnoDB';
 
             $tabla->increments('id');
             $tabla->string('nombre_semana',45);
