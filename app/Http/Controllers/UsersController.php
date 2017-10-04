@@ -110,8 +110,7 @@ class UsersController extends Controller
         //
         $user = User::find($id);
         $user->delete();
-        $user->save();
-
+        
         Session::flash('message','Usuario eliminado correctamente');
         return redirect::to('admin/users');
         //dd($id);

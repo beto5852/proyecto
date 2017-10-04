@@ -18,11 +18,11 @@ class CreateRtTable extends Migration
 
             $table->increments('id');
 
-            $table->integer('rt_id_rubro')->unsigned();
-            $table->foreign('rt_id_rubro')->references('id')->on('rubros');
+            $table->integer('rt_id_rubro')->unsigned()->nullable();
+            $table->foreign('rt_id_rubro')->references('id')->on('rubros')->onDelete('set null');
 
-            $table->integer('rt_id_tecnologia')->unsigned();;
-            $table->foreign('rt_id_tecnologia')->references('id')->on('tecnologias');
+            $table->integer('rt_id_tecnologia')->unsigned()->nullable();
+            $table->foreign('rt_id_tecnologia')->references('id')->on('tecnologias')->onDelete('set null');
 
             
             $table->timestamps();

@@ -18,11 +18,11 @@ class CreateMsTable extends Migration
 
             $table->increments('id');
             
-            $table->integer('ms_id_mes')->unsigned();
-            $table->foreign('ms_id_mes')->references('id')->on('mes');
+            $table->integer('ms_id_mes')->unsigned()->nullable();
+            $table->foreign('ms_id_mes')->references('id')->on('mes')->onDelete('set null');
 
-            $table->integer('ms_id_semana')->unsigned();;
-            $table->foreign('ms_id_semana')->references('id')->on('semanas');
+            $table->integer('ms_id_semana')->unsigned()->nullable();
+            $table->foreign('ms_id_semana')->references('id')->on('semanas')->onDelete('set null');
 
             $table->timestamps();
         });

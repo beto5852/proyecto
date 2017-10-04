@@ -18,11 +18,11 @@ class CreateCeTable extends Migration
 
             $table->increments('id');
 
-            $table->integer('ce_id_cultivo')->unsigned();;
-            $table->foreign('ce_id_cultivo')->references('id')->on('cultivos');
+            $table->integer('ce_id_cultivo')->unsigned()->nullable();
+            $table->foreign('ce_id_cultivo')->references('id')->on('cultivos')->onDelete('set null');
 
-            $table->integer('ce_id_etapa')->unsigned();
-            $table->foreign('ce_id_etapa')->references('id')->on('etapas');
+            $table->integer('ce_id_etapa')->unsigned()->nullable();
+            $table->foreign('ce_id_etapa')->references('id')->on('etapas')->onDelete('set null');
 
             $table->timestamps();
         });

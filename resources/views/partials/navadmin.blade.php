@@ -55,7 +55,7 @@
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" class="form-control col-sm-8" placeholder="Buscar Práctica Agricola">
+                    <input type="text" class="form-control col-sm-8" placeholder="Buscar Práctica ">
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
@@ -63,7 +63,7 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Nombre de Usuario
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Editar Perfil</a></li>
+                        <li><a href="{{url('admin/users/'.$user->id.'/edit')}}">Editar Perfil</a></li>
                         <li><a href="#">Salir</a></li>
 
                     </ul>

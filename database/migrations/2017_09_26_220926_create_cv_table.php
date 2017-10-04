@@ -19,11 +19,11 @@ class CreateCvTable extends Migration
             $table->increments('id');
             $table->string('descripcion_caracteristica')->nullable();
 
-            $table->integer('cv_id_caracteristica')->unsigned();;
-            $table->foreign('cv_id_caracteristica')->references('id')->on('caracteristicas');
+            $table->integer('cv_id_caracteristica')->unsigned()->nullable();
+            $table->foreign('cv_id_caracteristica')->references('id')->on('caracteristicas')->onDelete('set null');
 
-            $table->integer('cv_id_variedad')->unsigned();
-            $table->foreign('cv_id_variedad')->references('id')->on('variedades');
+            $table->integer('cv_id_variedad')->unsigned()->nullable();
+            $table->foreign('cv_id_variedad')->references('id')->on('variedades')->onDelete('set null');
 
             $table->timestamps();
         });

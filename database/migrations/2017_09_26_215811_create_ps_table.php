@@ -18,11 +18,11 @@ class CreatePsTable extends Migration
 
             $table->increments('id');
 
-            $table->integer('ps_id_practica')->unsigned();;
-            $table->foreign('ps_id_practica')->references('id')->on('practicas')->onDelete('cascade');
+            $table->integer('ps_id_practica')->unsigned()->nullable();
+            $table->foreign('ps_id_practica')->references('id')->on('practicas')->onDelete('set null');
 
-            $table->integer('ps_id_semana')->unsigned();
-            $table->foreign('ps_id_semana')->references('id')->on('semanas')->onDelete('cascade');
+            $table->integer('ps_id_semana')->unsigned()->nullable();
+            $table->foreign('ps_id_semana')->references('id')->on('semanas')->onDelete('set null');
 
             $table->timestamps();
         });

@@ -11,11 +11,16 @@
     <title>{{ config('app.name', 'Administracion') }}</title>
 
     <!-- Styles -->
+    <!--
+    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('/css/bootstrap-material-design.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('/css/ripples.min.css')}}" rel="stylesheet" type="text/css">
+
+
+    <link href="{{ url('/css/ripples.min.css') }}" rel="stylesheet">-->
+
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{ url('/css/app.css') }}" rel="stylesheet">
-
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css">
@@ -45,7 +50,7 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -55,6 +60,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
+
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+
+<!--<script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
+<script src="{{ asset('js/material.min.js') }}"></script>
+<script src="{{ asset('js/ripples.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>-->
+
 <script>
     $.material.init();
 </script>
