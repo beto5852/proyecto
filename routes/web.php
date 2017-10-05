@@ -14,7 +14,7 @@
 Route::resource('/','LoginController@index');
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
     //
    // Auth::routes();

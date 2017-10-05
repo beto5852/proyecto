@@ -65,7 +65,6 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">Editar Perfil</a></li>
                         <li><a href="{{url('logout')}}">Salir</a></li>
-
                     </ul>
                 </li>
 
