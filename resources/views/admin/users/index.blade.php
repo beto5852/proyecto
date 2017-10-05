@@ -23,7 +23,8 @@
         <table class="table table-striped table-hover" >
             <thead>
             <tr >
-                <th>Nombre y Apellidos</></th>
+
+                <th>Nombre y Apellidos</th>
                 <th>Correo</th>
                 <th>Tipo usuario</th>
                 <th>Acciones</th>

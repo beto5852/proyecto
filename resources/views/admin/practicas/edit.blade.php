@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
     <ul class="breadcrumb" style="margin-bottom: 5px;">
-        <li>{!! Breadcrumbs::render('tecnologias.edit') !!}</li>
+        <li>{!! Breadcrumbs::render('practicas.edit') !!}</li>
     </ul>
 @endsection
 
@@ -24,20 +24,20 @@
         @endif
 
                 <!--Aqui va el formulario de la practica agricola-->
-        {!! Form::open(['url' => ['admin/tecnologias',$tecnologia], 'method' => 'PUT']) !!}
+        {!! Form::open(['url' => ['admin/practicas',$practica], 'method' => 'PUT']) !!}
         <div class="form-group">
-            {!! Form::label('nombre_tecnologia','Nombre de la tecnológia') !!}
-            {!! Form::text('nombre_tecnologia',$tecnologia->nombre_tecnologia,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])!!}
+            {!! Form::label('nombre_practica','Nombre de la labor agricola') !!}
+            {!! Form::text('nombre_practica',$practica->nombre_practica,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])!!}
         </div>
 
         <div class="form-group">
-            {!! Form::label('descripcion_tecnologia','Descripción') !!}
-            {{ Form::textarea('descripcion_tecnologia', $tecnologia->descripcion_tecnologia,['class' => 'ckeditor']) }}
+            {!! Form::label('contenido','Descripción') !!}
+            {{ Form::textarea('contenido',$practica->contenido,['class' => 'ckeditor']) }}
         </div>
 
         <div class="form-group text-right">
 
-            <a href="{{url('admin/tecnologias')}}" class="btn btn-info" >volver a prácticas</a>
+            <a href="{{url('admin/practicas')}}" class="btn btn-info" >volver a prácticas</a>
             {{ Form::submit('Actualizar', ['class' => 'btn btn-info']) }}
 
         </div>

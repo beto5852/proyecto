@@ -43,7 +43,7 @@ class PracticasController extends Controller
      */
     public function store(Request $request)
     {
-        //Guarda productos
+        //Guarda practicas
         $practica = new Practica($request->all());
         $practica->save();
         Session::flash('message','Labor agricola registrado correctamente');
@@ -71,6 +71,8 @@ class PracticasController extends Controller
     public function edit($id)
     {
         //edita con id
+        $practica = Practica::find($id);
+        return view('admin.practicas.edit',compact('practica'));
     }
 
     /**
@@ -83,6 +85,12 @@ class PracticasController extends Controller
     public function update(Request $request, $id)
     {
         //actualiza lo que se envio en edit$id
+        $practica = Practica::find($id);
+        $practica->fill($request->all());
+        $practica->save();
+
+        Session::flash('message','Práctica actualizado correctamente');
+        return redirect::to('admin/users');
     }
 
     /**
@@ -94,5 +102,12 @@ class PracticasController extends Controller
     public function destroy($id)
     {
         //elimina la practica con el id que recibe
+
+        $practica = Practica::find($id);
+        $practica->delete();
+
+        Session::flash('message','Práctica eliminada correctamente');
+        return redirect::to('admin/practicas');
+        //dd($id);
     }
 }

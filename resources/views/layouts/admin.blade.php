@@ -53,6 +53,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -66,20 +67,21 @@
 
 
 <script>
-    $.material.init();
-</script>
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
-<<script>
-    var options = {
-       filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-       filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-       filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-       filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-    };
+        $.material.init();
 </script>
 <script>
-    CKEDITOR.replace('my-editor', options);
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
 </script>
+
+<script>
+    CKEDITOR.replace( 'ckeditor',options);
+</script>
+
 <script src="/js/app.js"></script>
 </body>
 </html>

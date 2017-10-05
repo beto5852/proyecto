@@ -7,8 +7,6 @@
         <li>{!! Breadcrumbs::render('practicas.create') !!}</li>
     </ul>
     @endsection
-
-
 @section('content')
 
         <!--Aqui va el formulario de la practica agricola-->

@@ -31,21 +31,9 @@
                      <li><a href="{{ url('/register') }}">Registrarse</a></li>
 
                 @else
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" class="form-control col-md-8" placeholder="Buscar">
-                        </div>
-                    </form>
-                    <li>
-                        <a href="{{ url('/logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
 
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+                    <li>
+
                     </li>
                 @endif
             </ul>

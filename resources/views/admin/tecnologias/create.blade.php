@@ -2,6 +2,13 @@
 
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear tecnológia INTA')
 
+@section('breadcrumb')
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>{!! Breadcrumbs::render('tecnologias.create') !!}</li>
+    </ul>
+@endsection
+
+
 @section('content')
     @if(count($errors) > 0)
 

@@ -11,11 +11,15 @@
 |
 */
 
-Route::resource('/','HomeController@index');
+Route::resource('/','LoginController@index');
+
+
 Route::group(['prefix' => 'admin'], function () {
 
     //
    // Auth::routes();
+    Route::resource('/login','LoginController');
+    Route::resource('/home','HomeController');
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
@@ -32,6 +36,11 @@ Route::get('tecnologias/{id}',[
     'uses' => "TecnologiasController@destroy",
     'as'   =>  "tecnologias.destroy"
 ]);
+
+Route::get('logout',[
+    'uses'  =>  'LoginController@logout',
+    'as'    =>  'logout'
+] );
 
 
 

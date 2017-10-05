@@ -68,7 +68,7 @@ class TecnologiasController extends Controller
     public function edit($id)
     {
         //
-        $tecnologias = Tecnologia::find($id);
+        $tecnologia = Tecnologia::find($id);
         return view('admin.tecnologias.edit',compact('tecnologia'));
         //dd($tecnologias);
     }
@@ -94,5 +94,10 @@ class TecnologiasController extends Controller
     public function destroy($id)
     {
         //
+        $tecnologia = Tecnologia::find($id);
+        $tecnologia->delete();
+
+        Session::flash('message','Tecnológia eliminada correctamente');
+        return redirect::to('admin/tecnologias');
     }
 }

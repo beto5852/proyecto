@@ -59,11 +59,12 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Nombre de Usuario
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        {!! Auth::user()->name !!}
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Editar Perfil</a></li>
-                        <li><a href="#">Salir</a></li>
+                        <li><a href="{{url('logout')}}">Salir</a></li>
 
                     </ul>
                 </li>

@@ -42,4 +42,32 @@ Breadcrumbs::register('practicas.create', function($breadcrumbs)
 });
 
 
+Breadcrumbs::register('practicas.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('practicas');
+    $breadcrumbs->push('Editar práctica', url('[admin/practicas,$practica]'));
+});
 
+
+
+// Home > Tecnologias
+
+
+Breadcrumbs::register('tecnologias', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Lista de tecnológias', url('admin/tecnologias/'));
+});
+
+Breadcrumbs::register('tecnologias.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('tecnologias');
+    $breadcrumbs->push('Crear tecnológias', url('admin/tecnologias/create'));
+});
+
+
+Breadcrumbs::register('tecnologias.edit', function($breadcrumbs)
+{
+    $breadcrumbs->parent('practicas');
+    $breadcrumbs->push('Editar tecnológia', url('[admin/tecnologias,$tecnologia]'));
+});

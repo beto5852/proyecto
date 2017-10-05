@@ -34,7 +34,7 @@
                     <td>{{  $practica->nombre_practica}}</td>
                     <td>{{  $practica->contenido}}</td>
                     <td>
-                        <a href="#" class="btn btn-raised btn-primary" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="{{url('admin/practicas/'.$practica->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="#" class="btn btn-raised btn-danger" role="button"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
                     </td>
