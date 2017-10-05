@@ -8,6 +8,7 @@ use App\User;
 use Session;
 use Redirect;
 use App\Http\Requests\UserRequest;
+use DaveJamesMiller\Breadcrumbs;
 
 class UsersController extends Controller
 {
@@ -62,6 +63,8 @@ class UsersController extends Controller
     public function show($id)
     {
         //
+        $user = User::find($id);
+        return view('admin.users.show',compact('user'));
     }
 
     /**

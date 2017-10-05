@@ -2,6 +2,14 @@
 
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Lista de usuarios ')
 
+
+@section('breadcrumb')
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>{!! Breadcrumbs::render('users') !!}</li>
+    </ul>
+@endsection
+
+
 @section('content')
 
     @if(Session::has('message'))

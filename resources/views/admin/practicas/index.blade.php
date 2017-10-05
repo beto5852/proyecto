@@ -3,6 +3,11 @@
 
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Lista de Practicas')
 
+@section('breadcrumb')
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>{!! Breadcrumbs::render('practicas') !!}</li>
+    </ul>
+@endsection
 
 @section('content')
 

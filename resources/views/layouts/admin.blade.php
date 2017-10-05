@@ -35,12 +35,8 @@
 
     <div class="container">
 
-        <ul class="breadcrumb" style="margin-bottom: 5px;">
-            <li><a href="javascript:void(0)">Inicio</a></li>
-            <li><a href="javascript:void(0)">Crear usuarios</a></li>
-            <li class="active">Ver Usuarios</li>
+        @yield('breadcrumb')
 
-        </ul>
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title"> @yield('title')</h3>

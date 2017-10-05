@@ -2,6 +2,13 @@
 
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear práctica agricola')
 
+@section('breadcrumb')
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>{!! Breadcrumbs::render('practicas.create') !!}</li>
+    </ul>
+    @endsection
+
+
 @section('content')
 
         <!--Aqui va el formulario de la practica agricola-->

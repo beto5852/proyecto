@@ -2,6 +2,12 @@
 
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear Usuarios')
 
+@section('breadcrumb')
+    <ul class="breadcrumb" style="margin-bottom: 5px;">
+        <li>{!! Breadcrumbs::render('users.create') !!}</li>
+    </ul>
+@endsection
+
 @section('content')
     @if(count($errors) > 0)
 
@@ -14,6 +20,10 @@
             </ul>
         </div>
         @endif
+
+
+
+
 
     <!--Aqui va el formulario de la practica agricola-->
     {!! Form::open(['url' => 'admin/users', 'method' => 'POST']) !!}

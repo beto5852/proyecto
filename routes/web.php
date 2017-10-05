@@ -11,7 +11,7 @@
 |
 */
 
-Route::resource('/','LoginController@index');
+Route::resource('/','HomeController@index');
 Route::group(['prefix' => 'admin'], function () {
 
     //
