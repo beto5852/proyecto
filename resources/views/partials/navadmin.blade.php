@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/admin/home')}}">APP INTA</a>
+            <a class="navbar-brand" href="{{url('/admin/home')}}">ADMIN INTA</a>
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -23,20 +24,20 @@ class Authenticate
         $this->auth = $auth;
     }
 
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('admin/home');
 
-        }if($request->ajax()){
-                return reponse('Unauthorized.', 401);
 
-        }else{
-            return redirect('login');
+        if ( $this->auth->guest() ) {
+            if($request->ajax()){
+                return response('Unauthorized.', 401);
+            }else{
+                dd($request);
+
+                return redirect()->guest('login');
+            }
         }
 
         return $next($request);
     }
-
-
 }

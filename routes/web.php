@@ -13,10 +13,10 @@
 
 
 
-Route::group(['prefix' => 'admin', 'Middleware'], function () {
+Route::group(['prefix' => 'admin'], function () {
 
     //
-   // Auth::routes();
+    Auth::routes();
     Route::resource('/home','HomeController');
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
