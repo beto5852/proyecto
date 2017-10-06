@@ -18,22 +18,25 @@ class Authenticate
     protected $auth;
 
 
-    public function __construct(Guard $auth)
+    public function _construct(Guard $auth)
     {
         $this->auth = $auth;
     }
 
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard = null)
     {
-        if ($this->auth->guest()) {
-            if($request->ajax()){
-                return reponse('Unauthorized.', 401);
-            }else{
-                return redirect()->guest('admin.login.index');
-            }
+        if (Auth::guard($guard)->check()) {
+            return redirect('admin/home');
 
+        }if($request->ajax()){
+                return reponse('Unauthorized.', 401);
+
+        }else{
+            return redirect('login');
         }
 
         return $next($request);
     }
+
+
 }

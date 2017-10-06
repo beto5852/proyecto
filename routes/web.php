@@ -11,14 +11,12 @@
 |
 */
 
-Route::resource('/','LoginController@index');
 
 
-Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'Middleware'], function () {
 
     //
    // Auth::routes();
-    Route::resource('/login','LoginController');
     Route::resource('/home','HomeController');
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
@@ -42,6 +40,7 @@ Route::get('logout',[
     'as'    =>  'logout'
 ] );
 
+Route::resource('login','LoginController');
 
 
 
