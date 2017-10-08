@@ -12,6 +12,12 @@
 */
 
 
+Route::get('/', [
+    'uses' => 'FrontController@index',
+    'as'    => 'home',
+
+]);
+
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
