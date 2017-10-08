@@ -15,7 +15,6 @@
 Route::get('/', [
     'uses' => 'FrontController@index',
     'as'    => 'home',
-
 ]);
 
 
@@ -29,6 +28,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
 
+    Route::get('index', [
+        'uses' => 'FrontController@admin',
+        'as'    => 'administrador',
+    ]);
 
 });
 
