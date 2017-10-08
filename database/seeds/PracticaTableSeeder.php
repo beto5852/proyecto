@@ -26,7 +26,7 @@ class PracticaTableSeeder extends Seeder
                 'contenido'  => $body,
                 'tags'  => $tags,
                 'slug'  => $slug,
-                'practica_id_tecnologia'=> App\Tenologia::all()->random()->id,
+                'practica_id_tecnologia'=> App\Tecnologia::all()->random()->id,
                 'practica_id_usuario' => App\User::all()->random()->id
             ));
             

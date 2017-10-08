@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request;
-use App\Http\Requests\LoginRequest;
-use Session;
-use Redirect;
-use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;    
 
 
-
-class LoginController extends Controller
+class FrontController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +16,6 @@ class LoginController extends Controller
     public function index()
     {
         //
-        return view('admin.login');
     }
 
     /**
@@ -39,18 +34,9 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LoginRequest $request)
+    public function store(Request $request)
     {
         //
-
-        if(Auth::attempt(['email'=>$request['email'],'password' =>  $request['password']])){
-            //return redirect()->intended('dashboard');
-             return Redirect::to('admin/home');
-        }
-        Session::flash('message','Los datos son incorrectos');
-        return redirect::to('login');
-
-
     }
 
     /**
@@ -97,14 +83,4 @@ class LoginController extends Controller
     {
         //
     }
-
-    public function logout()
-    {
-        //
-        Auth::logout();
-        return redirect('login');
-
-    }
-
-
 }

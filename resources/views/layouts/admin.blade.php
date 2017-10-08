@@ -77,7 +77,10 @@
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
 </script>
-
+<script>
+    $('textarea').ckeditor();
+    // $('.textarea').ckeditor(); // if class is prefered.
+    </script>
 <script>
     CKEDITOR.replace( 'ckeditor',options);
 </script>

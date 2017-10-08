@@ -2,29 +2,33 @@
 
 namespace App;
 
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+
 
 class Practica extends Model
 {
     //
-    use Sluggable;
-
-
     protected $table = 'practicas';
 
-    protected $fillable = ['nombre_practica','contenido','path','tags','practica_id_tecnologia','practica_id_usuario'];
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'nombre_practica'
+            ]
+        ];
+    }
+
+
+
+    protected $fillable = ['nombre_practica','contenido','practica_id_usuario','practica_id_tecnologia','path'];
     //protected $fillable = ['nombre_practica','contenido','path','tags','slug'];
 
 
-  public function sluggable()
-     {
-         return [
-             'slug' => [
-                 'source' => 'nombre_practica'
-             ]
-         ];
-     }
+
 
 
     public function semanas()

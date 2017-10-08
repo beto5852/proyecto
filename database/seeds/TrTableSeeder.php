@@ -21,7 +21,7 @@ class TrTableSeeder extends Seeder
             \DB::table('rt')->insert(array(
 
                 'rt_id_rubro' => App\Rubro::all()->random()->id,
-                'rt_id_tecnologia' => App\Tenologia::all()->random()->id
+                'rt_id_tecnologia' => App\Tecnologia::all()->random()->id
             ));
         }
     }

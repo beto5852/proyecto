@@ -77,7 +77,7 @@ $factory->define(App\Rubro::class, function (Faker\Generator $faker) {
 
 /************************Tecnologia************************************/
 
-$factory->define(App\Tenologia::class, function (Faker\Generator $faker) {
+$factory->define(App\Tecnologia::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_tecnologia' => $faker->sentence,
@@ -85,19 +85,7 @@ $factory->define(App\Tenologia::class, function (Faker\Generator $faker) {
     ];
 });
 
-/************************Practicas***************************************************/
-/*
-$factory->define(App\Practica::class, function (Faker\Generator $faker) {
 
-    return [
-        'nombre_practica' => $faker->sentence,
-        'contenido' => $faker->paragraph,
-        'tags' => $faker->word,
-        
-        'practica_id_tecnologia'=> App\Tenologia::all()->random()->id,
-        'practica_id_usuario' => App\User::all()->random()->id,
-    ];
-});*/
 /************************Cultivos************************************/
 
 $factory->define(App\Cultivo::class, function (Faker\Generator $faker) {
@@ -133,6 +121,19 @@ $factory->define(App\Caracteristica::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_caracteristica' => $faker->sentence,
+    ];
+});
+
+/************************Practicas***************************************************/
+
+$factory->define(App\Practica::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre_practica' => $faker->sentence,
+        'contenido' => $faker->paragraph,
+        'tags' => $faker->word,
+        'practica_id_tecnologia'=> App\Tecnologia::all()->random()->id,
+        'practica_id_usuario' => App\User::all()->random()->id,
     ];
 });
 
