@@ -80,7 +80,7 @@
 <script>
     $('textarea').ckeditor();
     // $('.textarea').ckeditor(); // if class is prefered.
-    </script>
+</script>
 <script>
     CKEDITOR.replace( 'ckeditor',options);
 </script>
