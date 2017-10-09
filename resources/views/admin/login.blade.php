@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','<i class="fa fa-home" aria-hidden="true"></i>'.' '.'Login')
+@section('title','<i class="fa fa-sign-in" aria-hidden="true"></i>'.' '.'Accerder')
 
 
 @section('content')

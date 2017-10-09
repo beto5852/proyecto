@@ -2,15 +2,7 @@
     <div class="container">
         <div class="navbar-header">
 
-            <!-- Collapsed Hamburger -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <!-- Branding Image -->
+                      <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
                 APP INTA
             </a>
@@ -28,8 +20,7 @@
 
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                     <li><a href="{{ url('/register') }}">Registrarse</a></li>
-
+                     <li><a href="{{ url('/register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                 @else
 
                     <li>
