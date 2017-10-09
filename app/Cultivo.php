@@ -11,17 +11,17 @@ class Cultivo extends Model
     protected $fillable =['nombre_cultivo'];
 
 
-    public function etapas()
+    public function etapa()
     {
         return $this->belongsToMany('App\Etapa','ce')->withPivot('ce_id_etapa')->withTimestamps();
     }
 
-    public function rubros()
+    public function rubro()
     {
         return $this->belongsTo('App\Rubro');
     }
 
-    public  function variedades()
+    public  function variedade()
     {
         return $this->hasMany('App\Variedad');
     }

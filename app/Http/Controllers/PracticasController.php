@@ -9,6 +9,7 @@ use App\User;
 use App\Tecnologia;
 use App\Semana;
 use App\Mes;
+use App\Etapa;
 
 use Session;
 use Redirect;
@@ -39,7 +40,8 @@ class PracticasController extends Controller
         $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
         $semanas = Semana::pluck('nombre_semana','id');
         $meses = Mes::pluck('nombre_mes','id');
-        return view('admin.practicas.create', compact('tecnologias','semanas','meses'));
+        $etapas = Etapa::pluck('nombre_etapa','id');
+        return view('admin.practicas.create', compact('tecnologias','semanas','meses','etapas'));
 
     }
 

@@ -31,6 +31,10 @@
             {{ Form::select('ms_id_semana',$meses,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
+            {{ Form::label('etapas','Etapas') }}
+            {{ Form::select('ce_id_etapa',$etapas,null,['class' => 'form-control'])}}
+        </div>
+        <div class="form-group">
             {{ Form::hidden('user_id',Auth::user()->id,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
@@ -41,7 +45,7 @@
 
         <div class="form-group text-right">
             <a href="{{url('admin/practicas')}}">Regrese a la lista de prácticas</a>
-            {{ Form::submit('Registrar', ['class' => 'btn btn-info']) }}
+            {{ Form::submit('Guardar', ['class' => 'btn btn-info']) }}
 
         </div>
 
