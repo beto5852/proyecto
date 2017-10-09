@@ -13,8 +13,7 @@ class Practica extends Model
 
     use Sluggable;
 
-    public function sluggable()
-    {
+    public function sluggable(){
         return [
             'slug' => [
                 'source' => 'nombre_practica'
@@ -22,6 +21,9 @@ class Practica extends Model
         ];
     }
 
+    public function setPathAttribute($path){
+
+    }
 
 
     protected $fillable = ['nombre_practica','contenido','practica_id_usuario','practica_id_tecnologia','path'];
@@ -31,17 +33,17 @@ class Practica extends Model
 
 
 
-    public function semanas()
+    public function semana()
     {
         return $this->belongsToMany('\App\Semana')->withPivot('ps_id_semana')->withTimestamps();
     }
-     public function tecnologias()
+     public function tecnologia()
     {
-        return $this->belongsTo('App\Tecnologia');
+        return $this->belongsTo('App\Tecnologia','practica_id_tecnologia');
     }
-    public function users()
+    public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','practica_id_usuario');
 
     }
 

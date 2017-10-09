@@ -33,6 +33,16 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
         'as'    => 'administrador',
     ]);
 
+    Route::get('videos', [
+        'uses' => 'YoutubeController@index',
+        'as'   => 'youtube',
+    ]);
+
+    Route::post('videos',[
+        'uses' => 'YoutubeController@search',
+        'as' => 'youtube.search',
+    ]);
+
 });
 
 Route::get('users/{id}',[

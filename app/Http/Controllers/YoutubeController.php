@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request;
-use App\Http\Requests\LoginRequest;
-use Session;
-use Redirect;
-use Auth;
+use Illuminate\Http\Request;
+use Madcoda\Youtube;
+use View;
 
 
-
-class LoginController extends Controller
+class YoutubeController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -20,9 +19,39 @@ class LoginController extends Controller
     public function index()
     {
         //
-        return view('admin.login');
+        return view('admin.videos.index');
     }
 
+    /**  Realiza la búsqueda y la envía a la vista.
+     */
+    public function search(Request $request)
+    {
+
+        $input = $request->input();
+
+        $word = $input['search'];
+
+        $youtube = new Youtube(array('key' => 'AIzaSyAO2s0ANXziZNtFOo86RQBtSNy_30wBO0M'));
+
+
+        $params = array(
+            'q'             => $word,
+            'type'          => 'video',
+            'part'          => 'id, snippet',
+            'maxResults'    => 20
+        );
+
+        $videos = $youtube->searchAdvanced($params, true);
+
+       // dd($videos);
+
+        return \View::make('youtube',$videos);
+    }
+
+    
+    
+    
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -39,18 +68,9 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LoginRequest $request)
+    public function store(Request $request)
     {
         //
-
-        if(Auth::attempt(['email'=>$request['email'],'password' =>  $request['password']])){
-            //return redirect()->intended('dashboard');
-             return Redirect::to('admin/home');
-        }
-        Session::flash('message','Los datos son incorrectos');
-        return redirect::to('login');
-
-
     }
 
     /**
@@ -97,14 +117,4 @@ class LoginController extends Controller
     {
         //
     }
-
-    public function logout()
-    {
-        //
-        Auth::logout();
-        return redirect('/');
-
-    }
-
-
 }

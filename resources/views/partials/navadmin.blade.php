@@ -59,6 +59,7 @@
                 </div>
             </form>
             <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="{{route('home')}}"><i class="fa fa-eye" aria-hidden="true"></i> Ver sitio</a></li>
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user" aria-hidden="true"></i>

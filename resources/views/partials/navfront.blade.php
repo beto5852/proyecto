@@ -23,7 +23,7 @@
                     </ul>
                 </li>
 
-                <li><a href="{{route('administrador')}}"><i class="fa fa-lock" aria-hidden="true"></i> Administrador</a></li>
+
             </ul>
 
             <form class="navbar-form navbar-left">
@@ -33,12 +33,13 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a></li>
-                <li class=""><a href="#"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
+                <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contacto</a></li>
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock" aria-hidden="true"></i> Acceder
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        <li><a href="{{route('administrador')}}"><i class="fa fa-lock" aria-hidden="true"></i> Administrar</a></li>
                         <li><a href="{{url('/login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</a></li>
                         <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                     </ul>

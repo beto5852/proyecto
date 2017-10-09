@@ -31,15 +31,15 @@ class User extends Authenticatable
     ];
 
     public function notificaciones(){
-        return $this->hasMany('APP\Notificacion');
+        return $this->hasMany('App\Notificacion');
     }
     
     public function practicas(){
-        return $this->hasMany('APP\Practica');
+        return $this->hasMany('App\Practica');
     }
     
     public function telefonos(){
-        return $this->hasMany('APP\Telefono');
+        return $this->hasMany('App\Telefono');
     }
 
 

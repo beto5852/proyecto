@@ -22,14 +22,14 @@
 
         <table class="table table-striped table-hover" >
             <thead>
-            <tr >
+                <tr >
 
-                <th>Nombre y Apellidos</th>
-                <th>Correo</th>
-                <th>Tipo usuario</th>
-                <th>Acciones</th>
+                    <th>Nombre y Apellidos</th>
+                    <th>Correo</th>
+                    <th>Tipo usuario</th>
+                    <th>Acciones</th>
 
-            </tr>
+                </tr>
             </thead>
             <tbody>
             @foreach($users as $user)

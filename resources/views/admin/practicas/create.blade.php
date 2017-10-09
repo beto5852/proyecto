@@ -18,6 +18,27 @@
             {{ Form::textarea('contenido','',['class' => 'ckeditor']) }}
         </div>
 
+        <div class="form-group">
+            {{ Form::label('tecnologia','Tecnológia') }}
+            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
+        </div>
+        <div class="form-group">
+            {{ Form::label('semana','Semana') }}
+            {{ Form::select('ps_id_semana',$semanas,null,['class' => 'form-control'])}}
+        </div>
+        <div class="form-group">
+            {{ Form::label('mes','Mes') }}
+            {{ Form::select('ms_id_semana',$meses,null,['class' => 'form-control'])}}
+        </div>
+        <div class="form-group">
+            {{ Form::hidden('user_id',Auth::user()->id,null,['class' => 'form-control'])}}
+        </div>
+        <div class="form-group">
+            {{ Form::label('imagen','Imagen de la práctica') }}
+            {{ Form::file('path')}}
+        </div>
+
+
         <div class="form-group text-right">
             <a href="{{url('admin/practicas')}}">Regrese a la lista de prácticas</a>
             {{ Form::submit('Registrar', ['class' => 'btn btn-info']) }}

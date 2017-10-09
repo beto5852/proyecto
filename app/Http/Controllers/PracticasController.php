@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Practica;
+use App\User;
+use App\Tecnologia;
+use App\Semana;
+use App\Mes;
 
 use Session;
 use Redirect;
@@ -32,7 +36,11 @@ class PracticasController extends Controller
     public function create()
     {
         //
-        return view('admin.practicas.create');
+        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
+        $semanas = Semana::pluck('nombre_semana','id');
+        $meses = Mes::pluck('nombre_mes','id');
+        return view('admin.practicas.create', compact('tecnologias','semanas','meses'));
+
     }
 
     /**
