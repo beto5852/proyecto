@@ -23,12 +23,12 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     // Auth::routes();
 //    Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
 //    Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
-    Route::resource('/home','HomeController');
+    //Route::resource('/home','HomeController');
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
 
-    Route::get('index', [
+    Route::get('home', [
         'uses' => 'FrontController@admin',
         'as'    => 'administrador',
     ]);

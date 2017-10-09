@@ -12,7 +12,6 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Inicio</a></li>
 
-
                 <li class="dropdown">
                     <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Tecnologias
                         <b class="caret"></b></a>
@@ -23,6 +22,8 @@
                         <li><a href="#">Videos</a></li>
                     </ul>
                 </li>
+
+                <li><a href="{{route('administrador')}}">Administrador</a></li>
             </ul>
 
             <form class="navbar-form navbar-left">

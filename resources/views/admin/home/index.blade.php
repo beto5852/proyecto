@@ -10,5 +10,13 @@
 
 @section('content')
 
+    @if(Session::has('message'))
+        <div class="alert alert-dismissible alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            {{Session::get('message')}}
+        </div>
+    @endif
+
+    <h1>est es una prueba</h1>
 
 @endsection
