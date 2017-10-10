@@ -30,7 +30,9 @@
                             {!! Form::label('password','Contraseña',['class' =>'form-control']) !!}
                             {!! Form::password('password',['class' =>'form-control', 'placeholder' =>'','required'])!!}
                         </div>
-
+                        <a class="btn btn-primary" href="#">
+                            Facebook
+                        </a>
 
 
 

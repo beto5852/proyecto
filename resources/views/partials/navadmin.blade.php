@@ -1,5 +1,5 @@
 
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-inverse" >
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -53,14 +53,12 @@
                     </ul>
                 </li>
             </ul>
-            <form class="navbar-form navbar-left">
-                <div class="form-group">
-                    <input type="text" class="form-control col-sm-8" placeholder="Buscar Práctica ">
-                </div>
-            </form>
+
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="{{route('home')}}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Ver sitio</a></li>
+                <li><a href="{{url('admin/notificaciones')}}" ><i class="fa fa-eye" aria-hidden="true"></i> Enviar mensaje</a></li>
+                <li><a href="javascript:void(0)">Notificaciones <span class="badge">3</span></a></li>
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user" aria-hidden="true"></i>
                         {!! Auth::user()->name !!}

@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse">
+<div class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
@@ -35,6 +35,9 @@
                 <li class=""><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a></li>
                 <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contacto</a></li>
+                <li><a href="#" ><i class="fa fa-commenting" aria-hidden="true"></i> Enviar mensaje</a></li>
+
+
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock" aria-hidden="true"></i> Acceder
                         <b class="caret"></b></a>
@@ -44,6 +47,7 @@
                         <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                     </ul>
                 </li>
+
             </ul>
         </div>
     </div>

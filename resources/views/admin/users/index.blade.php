@@ -46,7 +46,7 @@
             @endforeach
             </tbody>
         </table>
-        <center>{{ $users->links() }}</center>
+    <ul class="pager"><center>{{ $users->links() }}</center></ul>
         <div class="floating">
             <a href="{{url('admin/users/create')}}" class="btn btn-primary btn-fab">
                 <i class="material-icons">add</i>

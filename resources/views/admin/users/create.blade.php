@@ -24,7 +24,6 @@
 
 
 
-
     <!--Aqui va el formulario de la practica agricola-->
     {!! Form::open(['url' => 'admin/users', 'method' => 'POST']) !!}
         <div class="form-group">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
 

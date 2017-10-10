@@ -71,3 +71,13 @@ Breadcrumbs::register('tecnologias.edit', function($breadcrumbs)
     $breadcrumbs->parent('practicas');
     $breadcrumbs->push('Editar tecnológia', url('[admin/tecnologias,$tecnologia]'));
 });
+
+
+// Home > notificaciones
+
+
+Breadcrumbs::register('notificaciones', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('notificaciones', url('admin/notificaciones/'));
+});

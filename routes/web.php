@@ -28,6 +28,18 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
 
+    Route::get('notificaciones', [
+        'uses' => 'NotificacionesController@index',
+        'as'    => 'enviar',
+    ]);
+
+
+    Route::post('notificaciones',[
+        'uses' => 'NotificacionesController@store',
+        'as' => 'enviar.store',
+    ]);
+
+
     Route::get('home', [
         'uses' => 'FrontController@admin',
         'as'    => 'administrador',

@@ -55,7 +55,7 @@ $factory->define(App\Telefono::class, function (Faker\Generator $faker) {
 
     ];
 });
-/******************Notificaciones**************************************/
+/******************notificaciones**************************************/
 
 $factory->define(App\Notificacion::class, function (Faker\Generator $faker) {
 

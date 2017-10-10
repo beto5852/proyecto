@@ -21,6 +21,8 @@ class CreateNotificacionesTable extends Migration
             $tabla->text('Mensaje');
             $tabla->unsignedInteger('id_usuario_envia');
             $tabla->unsignedInteger('id_usuario_recibe');
+
+
             $tabla->timestamps();
 
         } );
