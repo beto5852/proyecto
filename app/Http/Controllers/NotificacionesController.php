@@ -10,6 +10,17 @@ use Redirect;
 
 class NotificacionesController extends Controller
 {
+
+    public function toArray($notifiable)
+    {
+        return [
+            'invoice_id' => $this->invoice->id,
+            'amount' => $this->invoice->amount,
+        ];
+    }
+
+
+
     /**
      * Display a listing of the resource.
      *
@@ -55,7 +66,6 @@ class NotificacionesController extends Controller
         //dd($idusuario);
 
         Notificacion::create([
-
           'Mensaje'   => $request->Mensaje,
          'id_usuario_envia' => auth()->id(),
          'id_usuario_recibe' =>  $request->user_id,

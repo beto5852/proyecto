@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Notificacion;
 class HomeController extends Controller
 {
     /**
@@ -14,7 +14,10 @@ class HomeController extends Controller
     public function index()
     {
         //
-        return view('admin.home.index');
+        $mensaje_id = Notificacion::findeOrCreateBySessionID(null);
+
+               //dd($notificaciones);
+        return view('admin.home.index')->with(compact('mensaje_id'));
     }
 
     /**

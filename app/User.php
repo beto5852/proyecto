@@ -30,9 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function notificaciones(){
+   /* public function notificaciones(){
         return $this->hasMany('App\Notificacion');
-    }
+    }*/
     
     public function practicas(){
         return $this->hasMany('App\Practica');
