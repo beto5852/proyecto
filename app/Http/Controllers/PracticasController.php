@@ -82,9 +82,12 @@ class PracticasController extends Controller
      */
     public function edit($id)
     {
+        $users = User::pluck('name','id');
+        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
+
         //edita con id
         $practica = Practica::find($id);
-        return view('admin.practicas.edit',compact('practica'));
+        return view('admin.practicas.edit',compact('practica','users','tecnologias'));
     }
 
     /**
@@ -97,12 +100,17 @@ class PracticasController extends Controller
     public function update(Request $request, $id)
     {
         //actualiza lo que se envio en edit$id
+
+
         $practica = Practica::find($id);
+
         $practica->fill($request->all());
+
+       // dd($practica);
         $practica->save();
 
         Session::flash('message','Práctica actualizado correctamente');
-        return redirect::to('admin/users');
+        return redirect::to('admin/practicas');
     }
 
     /**

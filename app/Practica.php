@@ -39,10 +39,8 @@ class Practica extends Model
 
     }
 
-
-    protected $fillable = ['nombre_practica','contenido','practica_id_usuario','practica_id_tecnologia','path','tags'];
+    protected $fillable = ['nombre_practica','contenido','path','tags','practica_id_tecnologia','practica_id_usuario'];
     //protected $fillable = ['nombre_practica','contenido','path','tags','slug'];
-
 
 
 
