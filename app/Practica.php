@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-
+use Illuminate\Support\Facades\Storage;
 
 class Practica extends Model
 {
@@ -24,17 +24,24 @@ class Practica extends Model
     public function setPathAttribute($path){
 
         if (!empty($path)){
-            $nombre = $path->image->getClientOriginalName();
+
+           // dd($path);
+
+            $nombre = $path->getClientOriginalName();
             $this->attributes['path'] = $nombre;
-            \Storage::disk('local')->put($nombre, \File::get($path));
+            \Storage::disk('img')->put($nombre, \File::get($path));
+
+           /* $nombre_route = time().'_'.$path->getClientOriginalName();
+            Storage::disk('img')->put($nombre_route, file_get_contents( $path->getRealPath() ) );*/
+
+
         }
 
     }
 
 
-    protected $fillable = ['nombre_practica','contenido','practica_id_usuario','practica_id_tecnologia','path'];
+    protected $fillable = ['nombre_practica','contenido','practica_id_usuario','practica_id_tecnologia','path','tags'];
     //protected $fillable = ['nombre_practica','contenido','path','tags','slug'];
-
 
 
 

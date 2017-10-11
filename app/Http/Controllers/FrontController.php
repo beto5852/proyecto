@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\PostNewNotification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Notifications;
 use App\Notificacion;
+use App\User;
 use Session;
 use Redirect;
 
@@ -24,11 +27,7 @@ class FrontController extends Controller
 
     public function  admin(){
 
-
-      //  $notificacion= Notificacion::findeOrCreateBySessionID(null);
-        //dd($notificaciones);
-        //return view('admin.home.index',compact('notificacion' ));
-        //return view('admin.home.index',['notificaciones' => $notificaciones ]);
+       
         return view('admin.home.index');
     }
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 use App\Notificacion;
 use App\User;
@@ -11,14 +14,8 @@ use Redirect;
 class NotificacionesController extends Controller
 {
 
-    public function toArray($notifiable)
-    {
-        return [
-            'invoice_id' => $this->invoice->id,
-            'amount' => $this->invoice->amount,
-        ];
-    }
-
+    
+    
 
 
     /**
@@ -35,7 +32,7 @@ class NotificacionesController extends Controller
         $names = $users->pluck('name','id');
        // dd($users);
         return view("admin.notificaciones.index",compact('names'));
-        
+
         
     }
 

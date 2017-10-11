@@ -11,6 +11,7 @@ use App\Semana;
 use App\Mes;
 use App\Etapa;
 
+use Storage;
 use Session;
 use Redirect;
 
@@ -25,7 +26,7 @@ class PracticasController extends Controller
     {
         //mostrar algunos Productos
         
-        $practicas = Practica::orderBy('id','ASC')->paginate(4);      
+        $practicas = Practica::orderBy('id','DESC')->paginate(4);
         return view("admin.practicas.index",['practicas' => $practicas]);
     }
 
@@ -55,6 +56,7 @@ class PracticasController extends Controller
     {
         //Guarda practicas
         $practica = new Practica($request->all());
+
         $practica->save();
         Session::flash('message','Labor agricola registrado correctamente');
         return redirect::to('admin/practicas');

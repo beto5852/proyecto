@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Notifications\PostNewNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,20 +12,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
 Route::get('/', [
     'uses' => 'FrontController@index',
     'as'    => 'home',
 ]);
+   
+
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
-    // Auth::routes();
-//    Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
-//    Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
-    //Route::resource('/home','HomeController');
+ 
+    //Notification::send($user, new PostNewNotification($post));
+ 
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');

@@ -36,7 +36,7 @@
         </div>
 
 
-        <div class="form-group text-right"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+        <div class="form-group text-right">
             {{ Form::submit('Enviar mensaje',['class' => 'btn btn-info']) }}
 
         </div>

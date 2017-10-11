@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Notifications;
+use App\Notifications\Mensajes;
 use Illuminate\Http\Request;
 use App\Notificacion;
 class HomeController extends Controller
@@ -14,10 +15,9 @@ class HomeController extends Controller
     public function index()
     {
         //
-        $mensaje_id = Notificacion::findeOrCreateBySessionID(null);
+    
 
-               //dd($notificaciones);
-        return view('admin.home.index')->with(compact('mensaje_id'));
+        return view('admin.home.index',compact('user'));
     }
 
     /**

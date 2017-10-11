@@ -21,7 +21,7 @@
 
         @endif
         <!--Aqui va el formulario de la practica agricola-->
-        {!! Form::open(['url' => 'admin/practicas', 'method' => 'POST']) !!}
+        {!! Form::open(['url' => 'admin/practicas','enctype' => 'multipart/form-data', 'method' => 'POST','files'=> 'true']) !!}
         <div class="form-group">
             {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Título...']) }}
         </div>
@@ -33,7 +33,7 @@
             {{ Form::label('tecnologia','Tecnológia') }}
             {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             {{ Form::label('semana','Semana') }}
             {{ Form::select('ps_id_semana',$semanas,null,['class' => 'form-control'])}}
         </div>
@@ -44,9 +44,13 @@
         <div class="form-group">
             {{ Form::label('etapas','Etapas') }}
             {{ Form::select('ce_id_etapa',$etapas,null,['class' => 'form-control'])}}
+        </div>-->
+        <div class="form-group">
+            {{ Form::label('tags','Tags') }}
+            {{ Form::text('tags','',['class' => 'form-control','placeholder' => 'Título...']) }}
         </div>
         <div class="form-group">
-            {{ Form::hidden('user_id',Auth::user()->id,null,['class' => 'form-control'])}}
+            {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
             {{ Form::label('imagen','Imagen de la práctica') }}

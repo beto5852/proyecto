@@ -58,7 +58,7 @@
                 <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="{{route('home')}}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Ver sitio</a></li>
                 <li><a href="{{url('admin/notificaciones')}}" ><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar mensaje</a></li>
-                <li><a href="#">Notificaciones <span class="badge"></span></a></li>
+                <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Notificaciones <span class="badge">0</span></a></li>
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-user" aria-hidden="true"></i>
                         {!! Auth::user()->name !!}

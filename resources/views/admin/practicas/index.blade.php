@@ -36,13 +36,13 @@
                 <tr class="info">
                     <td>{{  $practica->id }}</td>
                     <td>{{  $practica->nombre_practica}}</td>
-                    <td>{{  $practica->contenido}}</td>
+                    <td>{!! $practica->contenido !!}</td>
                     <td>{{  $practica->user['name']}}</td>
                     <td>{{  $practica->tecnologia['nombre_tecnologia']}}</td>
                     @if(empty($practica->path))
                     <td><img src="{{asset('img/no-imagen.jpg')}}" style = "width: 100px;"></td>
                     @else
-                    <td><img src="{{asset('img/')}}/{{'$practica->path'}}" style = "width: 100px;"></td>
+                    <td><img src="{{asset('img/')}}/{{$practica->path}}" style = "width: 100px;"></td>
                     @endif
                     <td>
                         <a href="{{url('admin/practicas/'.$practica->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
