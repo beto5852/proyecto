@@ -12,6 +12,14 @@ use DaveJamesMiller\Breadcrumbs;
 
 class UsersController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin',['only' => ['index','show','edit','update','create','destroy']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

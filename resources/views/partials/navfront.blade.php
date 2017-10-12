@@ -37,7 +37,7 @@
                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contacto</a></li>
                 <li><a href="#" ><i class="fa fa-commenting" aria-hidden="true"></i> Enviar mensaje</a></li>
 
-
+                @if(Auth::check())
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock" aria-hidden="true"></i> Acceder
                         <b class="caret"></b></a>
@@ -47,7 +47,17 @@
                         <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                     </ul>
                 </li>
-
+                    @else
+                <li class="dropdown">
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock" aria-hidden="true"></i> Acceder
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{route('administrador')}}"><i class="fa fa-lock" aria-hidden="true"></i> Administrar</a></li>
+                        <li><a href="{{url('/login')}}"><i class="fa fa-sign-in" aria-hidden="true"></i> Entrar</a></li>
+                        <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
+                    </ul>
+                </li>
+                    @endif
             </ul>
         </div>
     </div>

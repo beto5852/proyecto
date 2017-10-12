@@ -12,6 +12,9 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{route('administrador')}}">Inicio</a></li>
+
+               @if(Auth::user()->type == 'admin')
+
                 <li class="dropdown">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Usuarios
                         <b class="caret"></b></a>
@@ -53,6 +56,7 @@
                     </ul>
                 </li>
             </ul>
+            @endif
 
             <ul class="nav navbar-nav navbar-right">
                 <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>

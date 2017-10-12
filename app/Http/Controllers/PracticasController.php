@@ -17,6 +17,14 @@ use Redirect;
 
 class PracticasController extends Controller
 {
+
+    public function __construct()
+    {
+            $this->middleware('auth');
+            $this->middleware('admin',['only' => ['index','edit','update','create','destroy']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -87,7 +95,7 @@ class PracticasController extends Controller
 
         //edita con id
         $practica = Practica::find($id);
-        return view('admin.practicas.edit',compact('practica','users','tecnologias'));
+        return view('admin.practicas.edit',compact('users','tecnologias','practica'));
     }
 
     /**
@@ -103,9 +111,7 @@ class PracticasController extends Controller
 
 
         $practica = Practica::find($id);
-
         $practica->fill($request->all());
-
        // dd($practica);
         $practica->save();
 
@@ -125,7 +131,6 @@ class PracticasController extends Controller
 
         $practica = Practica::find($id);
         $practica->delete();
-
         Session::flash('message','Práctica eliminada correctamente');
         return redirect::to('admin/practicas');
         //dd($id);

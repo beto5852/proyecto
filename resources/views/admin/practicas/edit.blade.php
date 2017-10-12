@@ -37,7 +37,7 @@
 
         <div class="form-group">
             {{ Form::label('user','Cambiar editor') }}
-           {{ Form::select('user_id',$users,null,['class' => 'form-control'])}}
+           {{ Form::select('practica_id_usuario',$users,null,['class' => 'form-control'])}}
 
         </div>
 

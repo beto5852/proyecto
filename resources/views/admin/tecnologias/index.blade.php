@@ -29,7 +29,7 @@
         @foreach($tecnologias as $tecnologia)
             <tr class="info">
                 <td>{{  $tecnologia->nombre_tecnologia }}</td>
-                <td>{!! $tecnologia->descripcion_tecnologia !!}</td>
+                <td >{!! $tecnologia->descripcion_tecnologia !!}</td>
                 <td>
                     <a href="{{url('admin/tecnologias/'.$tecnologia->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                     <a href="{{url('tecnologias/'.$tecnologia->id)}}" class="btn btn-raised btn-warning" role="button"

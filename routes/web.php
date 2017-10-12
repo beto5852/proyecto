@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     ]);
 
 
-    Route::get('home', [
+    Route::get('/', [
         'uses' => 'FrontController@admin',
         'as'    => 'administrador',
     ]);
@@ -66,6 +66,11 @@ Route::get('users/{id}',[
 Route::get('tecnologias/{id}',[
     'uses' => "TecnologiasController@destroy",
     'as'   =>  "tecnologias.destroy"
+]);
+
+Route::get('practicas/{id}',[
+    'uses' => "PracticasController@destroy",
+    'as'   =>  "practicas.destroy"
 ]);
 
 Route::get('logout',[

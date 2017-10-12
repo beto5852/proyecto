@@ -19,10 +19,10 @@
 
 
                 <!-- Authentication Links -->
-                @if (Auth::guest())
+                @if (Auth::check())
                      <li><a href="{{ url('/register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                 @else
-
+                    <li><a href="{{ url('/register') }}"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</a></li>
                     <li>
 
                     </li>
