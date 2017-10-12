@@ -16,8 +16,11 @@ Route::get('/', [
     'uses' => 'FrontController@index',
     'as'    => 'home',
 ]);
-   
 
+Route::get('practica/{slug}', [
+    'uses' => 'FrontController@practica',
+    'as'    => 'practica',
+]);
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
