@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Notifications\PostNewNotification;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Notifications;
-use App\Notificacion;
+use App\Practica;
+use App\Tecnologia;
 use App\User;
-use Session;
-use Redirect;
+
 
 
 class FrontController extends Controller
@@ -22,13 +20,16 @@ class FrontController extends Controller
     public function index()
     {
         //
-        return view('index');
+        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
+        $practicas = Practica::OrderBy('id','DESC')->paginate(3);
+
+        return view('index', compact('practicas','tecnologias'));
     }
 
     public function  admin(){
 
-       
-        return view('admin.home.index');
+        $practicas = Practica::OrderBy('id','DESC')->paginate(3);
+        return view('admin.home.index',compact('practicas'));
     }
 
 

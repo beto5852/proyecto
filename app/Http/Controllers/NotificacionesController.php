@@ -70,7 +70,7 @@ class NotificacionesController extends Controller
         ]);
 
         Session::flash('message','Tu mensaje ha sido enviado');
-        return redirect::to('admin/home');
+        return redirect::to('admin');
 
     }
 

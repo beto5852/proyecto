@@ -12,22 +12,26 @@
 @section('content')
 
     <div class="row">
-        <div class="jumbotron col-md-8"><h1>Labores Agricolas de la semana</h1>
+        <div class="jumbotron col-md-8"><h1>Labores Agrícolas de la semana</h1>
 
+            @foreach($practicas as $practica)
             <article>
-                <h2>Tiulo de la practica</h2>
+                <h2>{{$practica->nombre_practica}}</h2>
                 <div class="row">
                     <div class="col-md-8">
-                        <i class="fa fa-folder-open" aria-hidden="true"></i> Nombre de tecnologia
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Nombre del usuario
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>{{$practica->tecnologia->nombre_tecnologia}}
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>{{$practica->user->name}}
                     </div>
                     <div class="col-md-4">
-                        <i class="fa fa-calendar-o" aria-hidden="true"></i> Fecha de creacion
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i> {{$practica->created_at}}
                     </div>
                 </div>
                 <br>
-
-                <img src="{{asset('img/cultivomaiz.jpg')}}" class="img-responsive" width="100%">
+                @if(empty($practica->path))
+                    <img src="{{asset('img/no-imagen.jpg')}}" class="img-responsive" width="100%">
+                @else
+                    <img src="{{asset('img/')}}/{{$practica->path}}" class="img-responsive" width="100%">
+                @endif
                 <br>
                 <p>¿Qué es Lorem Ipsum?
                     Lorem Ipsum es simplemente el texto de relleno de las
@@ -40,7 +44,8 @@
 
 
             </article>
-
+         @endforeach
+            <center>{{ $practicas->render() }}</center>
 
         </div>
 
