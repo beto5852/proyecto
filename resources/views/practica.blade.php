@@ -33,7 +33,7 @@
                         <img src="{{asset('img/')}}/{{$practicas->path}}" class="img-responsive" width="100%">
                     @endif
                     <br>
-                    <p>{!! substr($practicas->contenidos) !!} </p>
+                    <p>{!! $practicas->contenidos!!} </p>
 
                 </article>
 

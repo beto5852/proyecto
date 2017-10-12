@@ -30,12 +30,14 @@ class FrontController extends Controller
         return view('admin.home.index',compact('practicas'));
     }
     public function  practica($slug){
-        $practicas = Practica::find(str_slug($slug));
+        $practicas = Practica::find($slug);
 
-                
+
         //dd($practicas);
         //$practicas = Practica::find()->pluck('slug');
-        return view('practica',compact('practicas'));
+        
+
+        return view('practica',compact('practicas'));;
     }
 
 
