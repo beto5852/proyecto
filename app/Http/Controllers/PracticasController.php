@@ -64,7 +64,6 @@ class PracticasController extends Controller
     {
         //Guarda practicas
         $practica = new Practica($request->all());
-
         $practica->save();
         Session::flash('message','Labor agricola registrado correctamente');
         return redirect::to('admin/practicas');
@@ -112,6 +111,8 @@ class PracticasController extends Controller
 
         $practica = Practica::find($id);
         $practica->fill($request->all());
+        $practica->slug = null;
+        $practica->update(['nombre_practica']);
        // dd($practica);
         $practica->save();
 

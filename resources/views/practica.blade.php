@@ -2,16 +2,13 @@
 
 @section('title','<i class="fa fa-home" aria-hidden="true"></i>'.' '.'Bienvenido')
 
+@section('content')
+
 @section('breadcrumb')
     <ul class="breadcrumb" style="margin-bottom: 5px;">
         <li>{!! Breadcrumbs::render('home') !!}</li>
     </ul>
 @endsection
-
-
-@section('content')
-
-
     <div class="row">
         <div class="jumbotron col-md-8"><h1>Labores Agrícolas de la semana</h1>
 
@@ -33,7 +30,7 @@
                         <img src="{{asset('img/')}}/{{$practicas->path}}" class="img-responsive" width="100%">
                     @endif
                     <br>
-                    <p>{!! $practicas->contenidos!!} </p>
+                    <p>{!! substr($practicas->contenido,0,10000) !!} </p>
 
                 </article>
 

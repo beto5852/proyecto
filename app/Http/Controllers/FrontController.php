@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Notifications;
+use App\Tecnologia;
 use App\Practica;
 use App\User;
 
@@ -20,18 +21,16 @@ class FrontController extends Controller
     {
         //
         $practicas = Practica::OrderBy('id','DESC')->paginate(3);
-
         return view('index', compact('practicas'));
     }
 
     public function  admin(){
-
         $practicas = Practica::OrderBy('id','DESC')->paginate(3);
         return view('admin.home.index',compact('practicas'));
     }
     public function  practica($slug){
-        $practicas = Practica::find($slug);
-
+        //$practicas = Practica::find($slug);
+        $practicas = Practica::where('slug',$slug)->first();
 
         //dd($practicas);
         //$practicas = Practica::find()->pluck('slug');

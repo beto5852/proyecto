@@ -2,15 +2,13 @@
 
 @section('title','<i class="fa fa-home" aria-hidden="true"></i>'.' '.'Bienvenido')
 
+@section('content')
+
 @section('breadcrumb')
     <ul class="breadcrumb" style="margin-bottom: 5px;">
         <li>{!! Breadcrumbs::render('home') !!}</li>
     </ul>
 @endsection
-
-
-@section('content')
-
     <div class="row">
         <div class="jumbotron col-md-8"><h1>Labores Agrícolas de la semana</h1>
 
@@ -30,15 +28,15 @@
                 @if(empty($practica->path))
                     <img src="{{asset('img/no-imagen.jpg')}}" class="img-responsive" width="100%">
                 @else
-                    <img src="{{asset('img/')}}/{{$practica->path}}" class="img-responsive" width="100%">
+                   <a  href="{{'practica'}}/{{$practica->slug}}"> <img src="{{asset('img/')}}/{{$practica->path}}" class="img-responsive" width="100%"></a>
                 @endif
                 <br>
-                <p>{!! substr($practica->contenido,0,100) !!} </p>
+                <p>{!! substr($practica->contenido,0,200) !!} </p>
                 <p class="text-right"><a class="btn btn-primary btn-lg" href="{{'practica'}}/{{$practica->slug}}">Leer más..</a></p>
 
             </article>
-         @endforeach
-            <center>{{ $practicas->render() }}</center>
+            @endforeach
+            <center>{{ $practicas->links()}}</center>
 
         </div>
 
