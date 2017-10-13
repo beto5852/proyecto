@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
 
 use App\Practica;
@@ -46,11 +47,18 @@ class PracticasController extends Controller
     public function create()
     {
         //
-        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
+       /* $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
         $semanas = Semana::pluck('nombre_semana','id');
         $meses = Mes::pluck('nombre_mes','id');
         $etapas = Etapa::pluck('nombre_etapa','id');
-        return view('admin.practicas.create', compact('tecnologias','semanas','meses','etapas'));
+        return view('admin.practicas.create', compact('tecnologias','semanas','meses','etapas'));*/
+
+        $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
+        $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');
+        return view('admin.practicas.create',compact('tecnologias','tags'));
+        
+        
+       // return view('admin.practicas.create')->with('tecnologias',$tecnologias)->with('tags',$tags);
 
     }
 
@@ -62,9 +70,31 @@ class PracticasController extends Controller
      */
     public function store(Request $request)
     {
+      //dd($request->tags);
+
         //Guarda practicas
-        $practica = new Practica($request->all());
-        $practica->save();
+       // $practica = new Practica($request->all());
+
+        Practica::create([
+            'nombre_practica'   => $request->nombre_practica,
+            'contenido'   => $request->contenido,
+            'path'   => $request->path,
+            'practica_id_usuario' => $request->practica_id_usuario,
+            'practica_id_tecnologia' =>  $request->practica_id_tecnologia,
+        ]);
+
+        $tag_id = $request->input('tags');
+
+
+        for($i = 0; $i<count($tag_id); $i++) {
+            \DB::table('pt')->insert(array(
+                'practicas_id_tags' => $request->tags[$tag_id]
+            ));
+        }
+
+        //$practica->tags()->sync($request->tags);
+
+
         Session::flash('message','Labor agricola registrado correctamente');
         return redirect::to('admin/practicas');
         //dd($user);

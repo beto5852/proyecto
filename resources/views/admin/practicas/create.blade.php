@@ -34,28 +34,15 @@
             {{ Form::textarea('contenido','',['class' => 'ckeditor']) }}
         </div>
 
-
-       <!-- <div class="form-group">
-            {{ Form::label('semana','Semana') }}
-            {{ Form::select('ps_id_semana',$semanas,null,['class' => 'form-control'])}}
-        </div>
-        <div class="form-group">
-            {{ Form::label('mes','Mes') }}
-            {{ Form::select('ms_id_semana',$meses,null,['class' => 'form-control'])}}
-        </div>
-        <div class="form-group">
-            {{ Form::label('etapas','Etapas') }}
-            {{ Form::select('ce_id_etapa',$etapas,null,['class' => 'form-control'])}}
-        </div>-->
         <div class="form-group">
             {{ Form::label('tags','Tags') }}
-            {{ Form::text('tags','',['class' => 'form-control','placeholder' => 'Título...']) }}
+            {{ Form::select('practicas_id_tags[]',$tags,null,['class' => 'form-control','multiple']) }}
         </div>
         <div class="form-group">
             {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
-            {{ Form::label('imagen','Imagen de la práctica') }}
+            {{ Form::label('path','Imagen de la práctica') }}
             {{ Form::file('path')}}
         </div>
 

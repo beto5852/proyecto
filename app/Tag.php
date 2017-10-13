@@ -17,4 +17,10 @@ class Tag extends Model
         return $this->belongsToMany('App\Practica','pt')->withPivot('tags_id_practicas')->withTimestamps();
     }
 
+    public function scopeSearch($query,$nombre_tags){
+        return $query->where('nombre_tags','LIKE',"%$nombre_tags%" );
+    }
+
+
+
 }
