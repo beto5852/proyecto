@@ -6,7 +6,7 @@
 
 @section('breadcrumb')
     <ul class="breadcrumb" style="margin-bottom: 5px;">
-        <li>{!! Breadcrumbs::render('home') !!}</li>
+        <li>{!! Breadcrumbs::render('inicio') !!}</li>
     </ul>
 @endsection
     <div class="row">

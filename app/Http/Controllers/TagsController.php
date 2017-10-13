@@ -2,16 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Tag;
 use Illuminate\Http\Request;
-use App\Notifications;
-use App\Tecnologia;
-use App\Practica;
-use App\User;
+use Session;
+use Redirect;
+use DaveJamesMiller\Breadcrumbs;
 
-
-
-class FrontController extends Controller
+class TagsController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('admin',['only' => ['index','show','edit','update','create','destroy']]);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -20,33 +26,12 @@ class FrontController extends Controller
     public function index()
     {
         //
-        $practicas = Practica::OrderBy('id','DESC')->paginate(3);
-        return view('index', compact('practicas'));
-    }
 
-    public function  admin(){
-        $practicas = Practica::OrderBy('id','DESC')->paginate(3);
-        return view('admin.home.index',compact('practicas'));
-    }
-    public function  practica($slug){
-        //$practicas = Practica::find($slug);
-        $practicas = Practica::where('slug',$slug)->first();
+        $tags = Tag::orderBy('id','DESC')->paginate(6);
 
-        //dd($practicas);
-        //$practicas = Practica::find()->pluck('slug');
         
-
-        return view('practica',compact('practicas'));;
+        return view('admin.tags.index', ['tags' => $tags]);
     }
-
-    public function searchPracticas($name){
-
-        $practicas = Practica::scopeSearchPractica($name)->get();
-
-        dd($practicas);
-    }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -56,6 +41,7 @@ class FrontController extends Controller
     public function create()
     {
         //
+        return view('admin.tags.create');
     }
 
     /**
@@ -67,6 +53,10 @@ class FrontController extends Controller
     public function store(Request $request)
     {
         //
+        $tag = new Tag($request->all());
+        $tag->save();
+        Session::flash('message','Tag registrado correctamente');
+        return redirect::to('admin/tags');
     }
 
     /**
@@ -111,6 +101,9 @@ class FrontController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::find($id);
+        $tag->delete();
+        Session::flash('message','Tags eliminado correctamente');
+        return redirect::to('admin/tags');
     }
 }

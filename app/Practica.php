@@ -57,6 +57,11 @@ class Practica extends Model
         return $this->belongsTo('App\User','practica_id_usuario');
 
     }
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag','pt')->withPivot('practicas_id_tags')->withTimestamps();
+    }
+
 
 
 

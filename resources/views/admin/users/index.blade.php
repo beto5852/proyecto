@@ -19,8 +19,24 @@
         </div>
     @endif
 
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="form-group">
+                <a href="{{url('admin/users/create')}}" class="btn btn-raised btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear Usuario</a>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            {!! Form::open(['url' => ['admin/users'], 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'aria-describedby' => 'search']) !!}
 
-        <table class="table table-striped table-hover" >
+                <div class="form-group">
+                    {!! Form::text('search',null,['class' =>'form-control', 'placeholder' =>'Buscar','required'])!!}
+                </div>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+           <table class="table table-striped table-hover" >
             <thead>
                 <tr >
 
@@ -36,7 +52,11 @@
                 <tr class="info">
                     <td>{{  $user->name}}</td>
                     <td>{{  $user->email}}</td>
-                    <td>{{  $user->type}}</td>
+                    @if($user->type == 'admin')
+                    <td><span class="label label-primary">{{  $user->type}}</span></td>
+                    @else
+                    <td><span class="label label-danger">{{  $user->type}}</span></td>
+                    @endif
                     <td>
                         <a href="{{url('admin/users/'.$user->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
                         <a href="{{url('users/'.$user->id)}}" class="btn btn-raised btn-warning" role="button"
@@ -47,10 +67,6 @@
             </tbody>
         </table>
     <ul class="pager"><center>{{ $users->links() }}</center></ul>
-        <div class="floating">
-            <a href="{{url('admin/users/create')}}" class="btn btn-primary btn-fab">
-                <i class="material-icons">add</i>
-            </a>
-        </div>
+
 
 @endsection

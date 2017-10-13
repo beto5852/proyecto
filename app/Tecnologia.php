@@ -16,7 +16,7 @@ class Tecnologia extends Model
 
     public function rubros()
     {
-        return $this->belongsToMany('\App\Rubro','rt')->withPivot('rt_id_rubro')->withTimestamps();
+        return $this->belongsToMany('App\Rubro','rt')->withPivot('rt_id_rubro')->withTimestamps();
 
     }
 }

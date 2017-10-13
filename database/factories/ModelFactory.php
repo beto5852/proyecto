@@ -131,9 +131,15 @@ $factory->define(App\Practica::class, function (Faker\Generator $faker) {
     return [
         'nombre_practica' => $faker->sentence,
         'contenido' => $faker->paragraph,
-        'tags' => $faker->word,
         'practica_id_tecnologia'=> App\Tecnologia::all()->random()->id,
         'practica_id_usuario' => App\User::all()->random()->id,
     ];
 });
 
+/***************************Tags**********************************************************/
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre_tags' => $faker->word,
+    ];
+});

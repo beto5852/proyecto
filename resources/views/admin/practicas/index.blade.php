@@ -18,6 +18,24 @@
         </div>
     @endif
 
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="form-group">
+                <a href="{{url('admin/practicas/create')}}" class="btn btn-raised btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear Práctica</a>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            {!! Form::open(['url' => ['admin/practicas'], 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'aria-describedby' => 'search']) !!}
+
+            <div class="form-group">
+                {!! Form::text('search',null,['class' =>'form-control', 'placeholder' =>'Buscar','required'])!!}
+            </div>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+
+
     <table class="table table-striped table-hover" >
              <thead>
                 <tr >

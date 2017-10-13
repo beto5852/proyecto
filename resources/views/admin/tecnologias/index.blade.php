@@ -18,6 +18,23 @@
         </div>
     @endif
 
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="form-group">
+                <a href="{{url('admin/tecnologias/create')}}" class="btn btn-raised btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear tecnológia</a>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            {!! Form::open(['url' => ['admin/tecnologias'], 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'aria-describedby' => 'search']) !!}
+
+            <div class="form-group">
+                {!! Form::text('search',null,['class' =>'form-control', 'placeholder' =>'Buscar','required'])!!}
+            </div>
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+
     <table class="table table-striped table-hover" >
         <thead>
         <tr >
@@ -32,7 +49,7 @@
                 <td >{!! $tecnologia->descripcion_tecnologia !!}</td>
                 <td>
                     <a href="{{url('admin/tecnologias/'.$tecnologia->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a href="{{url('tecnologias/'.$tecnologia->id)}}" class="btn btn-raised btn-warning" role="button"
+                    <a href="{{route('tecnologias/'.$tecnologia->id)}}" class="btn btn-raised btn-warning" role="button"
                        onclick="return confirm('Esta seguro de eliminar al usuario')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>
@@ -41,9 +58,5 @@
     </table>
     <center>{{ $tecnologias->links() }}</center>
 
-    <div class="floating">
-        <a href="{{url('admin/tecnologias/create')}}" class="btn btn-primary btn-fab">
-            <i class="material-icons">add</i>
-        </a>
-    </div>
+
 @endsection

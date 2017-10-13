@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('password','Contraseña') !!}
-            {!! Form::password('password',['class' =>'form-control', 'placeholder' =>'','required'])!!}
+            {!! Form::password('password',['class' =>'form-control', 'placeholder' =>'**************','required'])!!}
         </div>
         <div class="form-group">
             {{ Form::label('type','Tipo de usuario') }}

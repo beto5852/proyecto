@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
         factory('App\Variedad',10)->create();
         factory('App\Caracteristica',10)->create();
         factory('App\Practica',30)->create();
-       // $this->call(PracticaTableSeeder::class);
+        factory('App\Tag',15)->create();
+        // $this->call(PracticaTableSeeder::class);
         $this->call(TrTableSeeder::class);
         $this->call(MesTableSeeder::class);
         $this->call(SemanasTableSeeder::class);
@@ -33,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MsTableSeeder::class);
         $this->call(CeTableSeeder::class);
         $this->call(CvTableSeeder::class);
+        $this->call(PtSeeder::class);
        
 
         Model::unguard();

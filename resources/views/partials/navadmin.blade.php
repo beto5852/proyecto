@@ -41,18 +41,21 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{url('admin/tecnologias/create')}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Crear tecnologia</a></li>
                         <li><a href="{{url('admin/tecnologias/')}}"><i class="fa fa-list" aria-hidden="true"></i> Listar tecnologia</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Cultivos
-                        <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                        <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Cultivo</a></li>
                         <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> Listar cultivos</a></li>
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar etapa de siembra</a></li>
                         <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> Listar etapas de siembra</a></li>
 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Tags
+                        <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url('admin/tags/')}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Tags</a></li>
+                        <li><a href="{{url('admin/tags/')}}"><i class="fa fa-list" aria-hidden="true"></i> Listar Tags</a></li>
                     </ul>
                 </li>
             </ul>

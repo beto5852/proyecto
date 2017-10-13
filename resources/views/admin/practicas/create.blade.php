@@ -23,16 +23,18 @@
         <!--Aqui va el formulario de la practica agricola-->
         {!! Form::open(['url' => 'admin/practicas','enctype' => 'multipart/form-data', 'method' => 'POST','files'=> 'true']) !!}
         <div class="form-group">
-            {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Título...']) }}
+            {{ Form::label('Practica','Tema de la práctica agrícola') }}
+            {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Tema aquí...']) }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('tecnologia','Tipo de tecnológia') }}
+            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
             {{ Form::textarea('contenido','',['class' => 'ckeditor']) }}
         </div>
 
-        <div class="form-group">
-            {{ Form::label('tecnologia','Tecnológia') }}
-            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
-        </div>
+
        <!-- <div class="form-group">
             {{ Form::label('semana','Semana') }}
             {{ Form::select('ps_id_semana',$semanas,null,['class' => 'form-control'])}}

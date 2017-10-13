@@ -4,7 +4,7 @@
 
 @section('breadcrumb')
     <ul class="breadcrumb" style="margin-bottom: 5px;">
-        <li>{!! Breadcrumbs::render('tecnologias.create') !!}</li>
+        <li>{!! Breadcrumbs::render('tags.create') !!}</li>
     </ul>
 @endsection
 
@@ -23,19 +23,15 @@
         @endif
 
                 <!--Aqui va el formulario de la practica agricola-->
-        {!! Form::open(['url' => 'admin/tecnologias', 'method' => 'POST']) !!}
+        {!! Form::open(['url' => 'admin/tags', 'method' => 'POST']) !!}
         <div class="form-group">
-            {!! Form::label('nombre_tecnologia','Nombre de la tecnológia') !!}
-            {!! Form::text('nombre_tecnologia',null,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])!!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('descripcion_tecnologia','Descripción de la tecnológia') !!}
-            {!! Form::textarea('descripcion_tecnologia',null,['class' =>'ckeditor'])!!}
+            {!! Form::label('nombre_tags','Nombre del Tags') !!}
+            {!! Form::text('nombre_tags',null,['class' =>'form-control', 'placeholder' =>'Nombre','required'])!!}
         </div>
 
         <div class="form-group text-right">
-            <a href="{{url('admin/tecnologias')}}" class="btn btn-info">ver lista de tecnologias</a>
-            {{ Form::submit('Guardar', ['class' => 'btn btn-info']) }}
+            <a href="{{url('admin/tags')}}" class="btn btn-info">ver lista de tecnologias</a>
+            {{ Form::submit('Registrar', ['class' => 'btn btn-info']) }}
 
         </div>
         {!! Form::close() !!}

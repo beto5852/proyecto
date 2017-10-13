@@ -22,6 +22,12 @@ Route::get('practica/{slug}', [
     'as'    => 'practica',
 ]);
 
+Route::get('index/{nombre_practica}', [
+    'uses' => 'FrontController@searchPracticas',
+    'as'    => 'front.search.practicas',
+]);
+
+
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
@@ -31,6 +37,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
+    Route::resource('/tags','TagsController');
 
     Route::get('notificaciones', [
         'uses' => 'NotificacionesController@index',
@@ -75,6 +82,12 @@ Route::get('practicas/{id}',[
     'uses' => "PracticasController@destroy",
     'as'   =>  "practicas.destroy"
 ]);
+
+Route::get('tags/{id}',[
+    'uses' => "TagsController@destroy",
+    'as'   =>  "tags.destroy"
+]);
+
 
 Route::get('logout',[
     'uses'  =>  'LoginController@logout',

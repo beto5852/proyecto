@@ -73,11 +73,26 @@ Breadcrumbs::register('tecnologias.edit', function($breadcrumbs)
 });
 
 
-// Home > notificaciones
+// Home >
 
 
-Breadcrumbs::register('notificaciones', function($breadcrumbs)
+Breadcrumbs::register('inicio', function($breadcrumbs)
 {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('notificaciones', url('admin/notificaciones/'));
+    $breadcrumbs->push('inicio', url('/'));
+});
+
+// Home > Tags
+
+Breadcrumbs::register('tags', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Lista tags', url('admin/tags/'));
+});
+
+
+Breadcrumbs::register('tags.create', function($breadcrumbs)
+{
+    $breadcrumbs->parent('tags');
+    $breadcrumbs->push('Crear tags', url('admin/tags/create'));
 });
