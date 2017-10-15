@@ -59,7 +59,7 @@ class Practica extends Model
     }
     public function tags()
     {
-        return $this->belongsToMany('App\Tag','pt')->withPivot('practicas_id_tags')->withTimestamps();
+        return $this->belongsToMany('App\Tag','pt');
     }
 
 

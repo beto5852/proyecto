@@ -21,7 +21,7 @@
 
         @endif
         <!--Aqui va el formulario de la practica agricola-->
-        {!! Form::open(['url' => 'admin/practicas','enctype' => 'multipart/form-data', 'method' => 'POST','files'=> 'true']) !!}
+        {!! Form::open(['url' => 'admin/practicas','method' => 'POST','files'=> 'true','enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{ Form::label('Practica','Tema de la práctica agrícola') }}
             {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Tema aquí...']) }}
@@ -31,12 +31,12 @@
             {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
-            {{ Form::textarea('contenido','',['class' => 'ckeditor']) }}
+            {{ Form::textarea('contenido',null,['class' => 'ckeditor']) }}
         </div>
 
         <div class="form-group">
-            {{ Form::label('tags','Tags') }}
-            {{ Form::select('practicas_id_tags[]',$tags,null,['class' => 'form-control','multiple']) }}
+            {{ Form::label('pt_id_tags','Tags') }}
+            {{ Form::select('pt_id_tags[]',$tags,null,['class' => 'form-control','multiple']) }}
         </div>
         <div class="form-group">
             {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}

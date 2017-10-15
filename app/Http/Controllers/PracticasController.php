@@ -56,7 +56,10 @@ class PracticasController extends Controller
         $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
         $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');
         return view('admin.practicas.create',compact('tecnologias','tags'));
-        
+
+       /* $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
+        $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');
+        return view('admin.practicas.create')->with('tecnologias',$tecnologias)->with('nombre_tags',$tags);*/
         
        // return view('admin.practicas.create')->with('tecnologias',$tecnologias)->with('tags',$tags);
 
@@ -70,29 +73,12 @@ class PracticasController extends Controller
      */
     public function store(Request $request)
     {
-      //dd($request->tags);
 
-        //Guarda practicas
-       // $practica = new Practica($request->all());
+        $practica = new Practica($request->all());
 
-        Practica::create([
-            'nombre_practica'   => $request->nombre_practica,
-            'contenido'   => $request->contenido,
-            'path'   => $request->path,
-            'practica_id_usuario' => $request->practica_id_usuario,
-            'practica_id_tecnologia' =>  $request->practica_id_tecnologia,
-        ]);
+        $practica->save();
 
-        $tag_id = $request->input('tags');
-
-
-        for($i = 0; $i<count($tag_id); $i++) {
-            \DB::table('pt')->insert(array(
-                'practicas_id_tags' => $request->tags[$tag_id]
-            ));
-        }
-
-        //$practica->tags()->sync($request->tags);
+        $practica->tags()->sync($request->pt_id_tags);
 
 
         Session::flash('message','Labor agricola registrado correctamente');

@@ -8,6 +8,7 @@
         "php": ">=5.6.4",
         "cviebrock/eloquent-sluggable": "4.1.1",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "fenos/notifynder": "4.0",
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "^5.3.0",
         "madcoda/php-youtube-api": "1.2",

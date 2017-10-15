@@ -176,6 +176,7 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Madcoda\Youtube\YoutubeServiceProviderLaravel5::class,
         Vinkla\Pusher\PusherServiceProvider::class,
+        Fenos\Notifynder\NotifynderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -239,6 +240,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Youtube'   => Madcoda\Youtube\Facades\Youtube::class,
+        'Notifynder' => Fenos\Notifynder\Facades\Notifynder::class,
     ],
 
 ];

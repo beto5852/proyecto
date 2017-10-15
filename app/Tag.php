@@ -14,7 +14,7 @@ class Tag extends Model
 
     public function practicas()
     {
-        return $this->belongsToMany('App\Practica','pt')->withPivot('tags_id_practicas')->withTimestamps();
+        return $this->belongsToMany('App\Practica','pt');
     }
 
     public function scopeSearch($query,$nombre_tags){

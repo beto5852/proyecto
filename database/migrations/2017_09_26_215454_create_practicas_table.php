@@ -22,7 +22,6 @@ class CreatePracticasTable extends Migration
             $tabla->text('contenido');
             $tabla->string('slug')->nullable();
             $tabla->string('path')->nullable();
-            $tabla->string('tags');
             $tabla->integer('practica_id_tecnologia')->unsigned()->nullable();
             $tabla->foreign('practica_id_tecnologia')->references('id')->on('tecnologias')->onDelete('set null');
             

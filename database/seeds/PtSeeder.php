@@ -16,8 +16,8 @@ class PtSeeder extends Seeder
 
             \DB::table('pt')->insert(array(
 
-                'practicas_id_tags' => App\Practica::all()->random()->id,
-                'tags_id_practicas' => App\Tag::all()->random()->id
+                'practica_id' => App\Practica::all()->random()->id,
+                'tag_id' => App\Tag::all()->random()->id
             ));
         }
     }
