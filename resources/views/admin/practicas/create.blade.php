@@ -1,5 +1,8 @@
 @extends('layouts.admin')
-
+<?php
+header('Content-Type: text/javascript; charset=UTF-8');
+// ...
+?>
 @section('title','<i class="fa fa-list" aria-hidden="true"></i>'.' '.'Crear práctica agricola')
 
 @section('breadcrumb')

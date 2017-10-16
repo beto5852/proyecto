@@ -111,10 +111,10 @@ class PracticasController extends Controller
         $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
         $tags = Tag::pluck('nombre_tags');
         $my_tags = $practica->tags->pluck('id')->ToArray();
-       // dd($my_tags);
+        //dd($my_tags);
 
 
-        return view('admin.practicas.edit',compact('users','tecnologias','practica','tags'));
+        return view('admin.practicas.edit',compact('users','tecnologias','practica','tags','my_tags'));
     }
 
     /**
@@ -135,6 +135,10 @@ class PracticasController extends Controller
         $practica->update(['nombre_practica']);
        // dd($practica);
         $practica->save();
+
+       // dd($request->pt_id_tags);
+
+        $practica->tags()->sync($request->pt_id_tags);
 
         Session::flash('message','Práctica actualizado correctamente');
         return redirect::to('admin/practicas');

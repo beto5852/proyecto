@@ -42,7 +42,7 @@
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control chosen-select', 'multiple select']) }}
+            {{ Form::select('pt_id_tags[]',$tags,$my_tags,['class'=>'form-control select', 'multiple select']) }}
         </div>
 
         <div class="form-group">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    header('Content-Type: text/javascript; charset=UTF-8');
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -58,8 +58,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 <script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
-<script src="{{ asset('chosen/docsupport/prism.js') }}" type="text/javascript"></script>
-<script src="{{ asset('chosen/docsupport/init.js') }}" type="text/javascript"></script>
+
 
 
 <script>
@@ -71,11 +70,10 @@
         filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
 
-
    };
 </script>
 <script>
-    $('.chosen-select').chosen();
+    $('.select').chosen({width: "100%"});
 </script>
 
 <script src="/js/app.js"></script>
