@@ -46,6 +46,7 @@ class FrontController extends Controller
         dd($practicas);
     }
 
+   
 
 
     /**

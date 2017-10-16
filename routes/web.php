@@ -27,6 +27,11 @@ Route::get('index/{nombre_practica}', [
     'as'    => 'front.search.practicas',
 ]);
 
+Route::get('/demo', [
+    'uses' => 'FrontController@demo',
+    'as'    => 'demo',
+]);
+
 
 
 Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {

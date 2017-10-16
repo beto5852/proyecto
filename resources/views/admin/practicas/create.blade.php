@@ -31,12 +31,12 @@
             {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
         </div>
         <div class="form-group">
-            {{ Form::textarea('contenido',null,['class' => 'ckeditor']) }}
+            {{ Form::textarea('contenido',null,[ 'id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$tags,null,['class' => 'form-control select-multiple', 'multiple  ']) }}
+            {{ Form::select('pt_id_tags[]',$tags,null,['multiple']) }}
         </div>
         <div class="form-group">
             {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}
