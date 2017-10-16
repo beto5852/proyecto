@@ -12,7 +12,7 @@
 
 
 
-    <link rel="stylesheet" type="text/css" href="{{asset('chosen/chosen.css')}}">
+    <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
@@ -58,11 +58,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 <script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
-<script>
-    $('.chosen-select').chosen({
-        max_selected_options: 5
-    });
-</script>
+<script src="{{ asset('chosen/docsupport/prism.js') }}" type="text/javascript"></script>
+<script src="{{ asset('chosen/docsupport/init.js') }}" type="text/javascript"></script>
+
 
 <script>
         $.material.init();
@@ -72,10 +70,13 @@
         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
         filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-    };
-</script>
 
+
+   };
+</script>
+<script>
+    $('.chosen-select').chosen();
+</script>
 
 <script src="/js/app.js"></script>
 

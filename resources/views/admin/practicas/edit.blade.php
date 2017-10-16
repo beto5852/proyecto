@@ -32,17 +32,17 @@
 
         <div class="form-group">
             {{ Form::label('tecnologia','Tecnológia') }}
-            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
+            {{ Form::select('practica_id_tecnologia',$tecnologias,$practica->tecnologia->id,['class' => 'form-control'])}}
         </div>
 
         <div class="form-group">
             {!! Form::label('contenido','Descripción') !!}
-             {{ Form::textarea('contenido',$practica->contenido,['class' => 'ckeditor']) }}
+             {{ Form::textarea('contenido',$practica->contenido,['id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$my_tags,null,['class' => 'form-control','multiple']) }}
+            {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control chosen-select', 'multiple select']) }}
         </div>
 
         <div class="form-group">

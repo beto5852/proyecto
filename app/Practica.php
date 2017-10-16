@@ -59,7 +59,7 @@ class Practica extends Model
     }
     public function tags()
     {
-        return $this->belongsToMany('App\Tag','pt');
+        return $this->belongsToMany('App\Tag','pt','practica_id','tag_id');
     }
 
 

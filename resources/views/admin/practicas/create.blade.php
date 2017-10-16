@@ -36,7 +36,7 @@
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control chosen-select', 'multiple','required']) }}
+            {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control', 'multiple','required']) }}
         </div>
         <div class="form-group">
             {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}

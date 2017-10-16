@@ -114,7 +114,7 @@ class PracticasController extends Controller
        // dd($my_tags);
 
 
-        return view('admin.practicas.edit',compact('users','tecnologias','practica','tags','my_tags'));
+        return view('admin.practicas.edit',compact('users','tecnologias','practica','tags'));
     }
 
     /**

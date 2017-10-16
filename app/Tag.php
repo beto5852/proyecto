@@ -14,7 +14,7 @@ class Tag extends Model
 
     public function practicas()
     {
-        return $this->belongsToMany('App\Practica','pt');
+        return $this->belongsToMany('App\Practica','pt','tag_id','practica_id');
     }
 
     public function scopeSearch($query,$nombre_tags){
