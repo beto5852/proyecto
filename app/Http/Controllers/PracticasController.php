@@ -105,12 +105,16 @@ class PracticasController extends Controller
      */
     public function edit($id)
     {
-        $users = User::pluck('name','id');
-        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
-
         //edita con id
         $practica = Practica::find($id);
-        return view('admin.practicas.edit',compact('users','tecnologias','practica'));
+        $users = User::pluck('name','id');
+        $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
+        $tags = Tag::pluck('nombre_tags');
+        $my_tags = $practica->tags->pluck('id')->ToArray();
+       // dd($my_tags);
+
+
+        return view('admin.practicas.edit',compact('users','tecnologias','practica','tags','my_tags'));
     }
 
     /**

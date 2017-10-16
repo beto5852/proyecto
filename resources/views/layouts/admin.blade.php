@@ -19,6 +19,8 @@
 
     <link href="{{ url('/css/ripples.min.css') }}" rel="stylesheet">-->
 
+
+    <link href="{{ asset('/css/chosen.css') }}" rel="stylesheet" type="text/css>
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
@@ -55,6 +57,7 @@
 <!-- Scripts -->
 <script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 
+<script src="{{ asset('/js/chosen.jquery.js')}}"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -64,7 +67,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
-
 
 <script>
         $.material.init();
@@ -81,10 +83,16 @@
     $('textarea').ckeditor();
     // $('.textarea').ckeditor(); // if class is prefered.
 </script>
+
 <script>
     CKEDITOR.replace( 'ckeditor',options);
 </script>
 
 <script src="/js/app.js"></script>
+
+<script type="text/javascript">
+    $('.select-multiple').chosen();
+</script>
+
 </body>
 </html>
