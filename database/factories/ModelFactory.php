@@ -24,7 +24,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 /**************************Usuario Administrado********************************/
-$factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
+/*$factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
    return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -32,7 +32,21 @@ $factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
         'type'=> 'admin',
         'remember_token' => str_random(10),
     ];
+});*/
+
+/****************************************************************************/
+
+$factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
+    return [
+        'name' => 'Alberto Calero Obando',
+        'email' => 'alexo2407@gmail.com',
+        'password' => bcrypt('secret'),
+        'type'=> 'admin',
+        'remember_token' => str_random(10),
+    ];
 });
+
+
 
 /**************************Usuario miembro********************************/
 
