@@ -12,7 +12,7 @@
 
 
 
-    <link href="{{asset('/chosen/chosen.css')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('chosen/chosen.css')}}">
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
@@ -47,18 +47,22 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('/chosen/chose.jquery.js') }}"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
+<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
+<script>
+    $('.chosen-select').chosen({
+        max_selected_options: 5
+    });
+</script>
 
 <script>
         $.material.init();
@@ -75,9 +79,7 @@
 
 <script src="/js/app.js"></script>
 
-<script >
-    $('.chosen-select').chosen();
-</script>
+
 <script>
     CKEDITOR.replace('article-ckeditor',options);
 </script>
