@@ -96,3 +96,16 @@ Breadcrumbs::register('tags.create', function($breadcrumbs)
     $breadcrumbs->parent('tags');
     $breadcrumbs->push('Crear tags', url('admin/tags/create'));
 });
+
+
+// Home > cultivos
+
+
+Breadcrumbs::register('cultivos', function($breadcrumbs)
+{
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Lista de cultivos', url('admin/cultivos/'));
+});
+
+
+

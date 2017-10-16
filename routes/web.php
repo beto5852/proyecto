@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
+    Route::resource('/cultivos','CultivosController');
     Route::resource('/tags','TagsController');
 
     Route::get('notificaciones', [
@@ -86,6 +87,11 @@ Route::get('tecnologias/{id}',[
 Route::get('practicas/{id}',[
     'uses' => "PracticasController@destroy",
     'as'   =>  "practicas.destroy"
+]);
+
+Route::get('cultivos/{id}',[
+    'uses' => "CultivosController@destroy",
+    'as'   =>  "cultivos.destroy"
 ]);
 
 Route::get('tags/{id}',[
