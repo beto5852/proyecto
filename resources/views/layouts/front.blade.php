@@ -38,9 +38,10 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"> @yield('title')</h3>
-
             </div>
+
             <div class="panel-body">
+
                 @yield('content')
             </div>
         </div>
@@ -62,6 +63,9 @@
 
 <script>
     $.material.init();
+    $('.my_slider').carousel('next')({
+        interval: 1
+    })
 </script>
 
 <script src="/js/app.js"></script>

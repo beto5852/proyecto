@@ -49,7 +49,7 @@
                 <td >{!! $tecnologia->descripcion_tecnologia !!}</td>
                 <td>
                     <a href="{{url('admin/tecnologias/'.$tecnologia->id.'/edit')}}" class="btn btn-raised btn-success" role="button"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                    <a href="{{route('tecnologias/'.$tecnologia->id)}}" class="btn btn-raised btn-warning" role="button"
+                    <a href="#" class="btn btn-raised btn-warning" role="button"
                        onclick="return confirm('Esta seguro de eliminar al usuario')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                 </td>
             </tr>

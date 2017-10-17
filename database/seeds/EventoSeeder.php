@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
-class CvTableSeeder extends Seeder
+class EventoSeeder extends Seeder
 {
     /**
      * Run the database seeds.

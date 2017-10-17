@@ -44,6 +44,8 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
     Route::resource('/practicas','PracticasController');
     Route::resource('/cultivos','CultivosController');
     Route::resource('/tags','TagsController');
+    Route::resource('/eventos','EventosController@index');
+
 
     Route::get('notificaciones', [
         'uses' => 'NotificacionesController@index',

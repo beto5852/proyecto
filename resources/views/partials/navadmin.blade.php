@@ -73,7 +73,7 @@
                         {!! Auth::user()->name !!}
                         <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i>
+                        <li><a href="{{url('admin/users/'.Auth::user()->id.'/edit')}}"><i class="fa fa-pencil" aria-hidden="true"></i>
                                  Editar Perfil</a></li>
                         <li><a href="{{url('logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a></li>
                     </ul>

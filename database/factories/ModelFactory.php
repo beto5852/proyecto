@@ -46,7 +46,17 @@ $factory->defineAs(App\User::class,'admin', function (Faker\Generator $faker) {
     ];
 });
 
+/**************************Eventos miembro********************************/
 
+$factory->define(App\Evento::class, function (Faker\Generator $faker) {
+    
+    return [
+        'title' => $faker->sentence,
+        'start' => $faker->dateTimeThisMonth(),
+        'end' => $faker->dateTimeThisMonth(),
+        'color'=> $faker->hexcolor
+    ];
+});
 
 /**************************Usuario miembro********************************/
 
@@ -135,6 +145,7 @@ $factory->define(App\Caracteristica::class, function (Faker\Generator $faker) {
 
     return [
         'nombre_caracteristica' => $faker->sentence,
+        
     ];
 });
 

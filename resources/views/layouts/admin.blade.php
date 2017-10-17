@@ -10,8 +10,10 @@
     <title>{{ config('app.name', 'Administración') }}</title>
 
 
+    <link href="{{asset('/calendar/fullcalendar.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('/calendar/fullcalendar.print.min.css')}}" rel="stylesheet" type="text/css" >
 
-    <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('/chosen/chosen.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
@@ -46,10 +48,15 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+
+<script src="{{ asset('/calendar/bin/jquery.min.js') }}"></script>
+<script src="{{ asset('/calendar/bin/moment.min.js') }}"></script>
+<script src="{{ asset('/calendar/bin/fullcalendar.min.js') }}"></script>
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
@@ -81,6 +88,31 @@
 <script>
     CKEDITOR.replace('article-ckeditor',options);
 </script>
+<script>
 
+    $(document).ready(function() {
+
+        $('.calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listWeek'
+            },
+            defaultDate: '2017-09-12',
+            navLinks: true, // can click day/week names to navigate views
+
+            weekNumbers: true,
+            weekNumbersWithinDays: true,
+            weekNumberCalculation: 'ISO',
+
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: 'admin/eventos'
+        });
+
+    });
+
+
+</script>
 </body>
 </html>

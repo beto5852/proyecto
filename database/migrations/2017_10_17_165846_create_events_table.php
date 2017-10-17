@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePtTable extends Migration
+class CreateEventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,16 @@ class CreatePtTable extends Migration
      */
     public function up()
     {
-        Schema::create('pt', function (Blueprint $table) {
+        Schema::create('events', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-
             $table->increments('id');
+            $table->string('title');
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->string('color',7);
 
-            $table->integer('practica_id')->unsigned()->nullable();
-            $table->foreign('practica_id')->references('id')->on('practicas')->onDelete('set null');
-
-            $table->integer('tag_id')->unsigned()->nullable();
-            $table->foreign('tag_id')->references('id')->on('tags')->onDelete('set null');
-            
             $table->timestamps();
         });
-
     }
 
     /**
@@ -37,7 +33,6 @@ class CreatePtTable extends Migration
     public function down()
     {
         //
-        Schema::drop('pt');
-
+        Schema::drop('events');
     }
 }
