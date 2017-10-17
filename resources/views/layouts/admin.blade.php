@@ -4,22 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <title>{{ config('app.name', 'Administración') }}</title>
 
-
-    <link href="{{asset('/calendar/fullcalendar.min.css')}}" rel="stylesheet" type="text/css" >
-    <link href="{{asset('/calendar/fullcalendar.print.min.css')}}" rel="stylesheet" type="text/css" >
-
+    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('/css/bootstrap-material-desing.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('/css/ripples.min.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('/chosen/chosen.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.css">
+
+
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
 
 
 </head>
@@ -48,23 +46,19 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
-
-<script src="{{ asset('/calendar/bin/jquery.min.js') }}"></script>
-<script src="{{ asset('/calendar/bin/moment.min.js') }}"></script>
-<script src="{{ asset('/calendar/bin/fullcalendar.min.js') }}"></script>
 
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/material.min.js') }}"></script>
+<script src="{{ asset('js/ripples.min.js') }}"></script>
+<script src="{{ asset('/js/app.js') }}"></script>
+
+<script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+
 <script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
-
 
 
 <script>
@@ -82,37 +76,10 @@
     $('.select').chosen({width: "100%"});
 </script>
 
-<script src="/js/app.js"></script>
-
 
 <script>
     CKEDITOR.replace('article-ckeditor',options);
 </script>
-<script>
 
-    $(document).ready(function() {
-
-        $('.calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,listWeek'
-            },
-            defaultDate: '2017-09-12',
-            navLinks: true, // can click day/week names to navigate views
-
-            weekNumbers: true,
-            weekNumbersWithinDays: true,
-            weekNumberCalculation: 'ISO',
-
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: 'admin/eventos'
-        });
-
-    });
-
-
-</script>
 </body>
 </html>
