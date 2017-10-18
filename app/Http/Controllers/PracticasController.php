@@ -54,7 +54,10 @@ class PracticasController extends Controller
         return view('admin.practicas.create', compact('tecnologias','semanas','meses','etapas'));*/
 
         $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
+
         $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');
+
+
         return view('admin.practicas.create',compact('tecnologias','tags'));
 
        /* $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
@@ -111,7 +114,7 @@ class PracticasController extends Controller
         $tecnologias = Tecnologia::pluck('nombre_tecnologia','id');
         $tags = Tag::pluck('nombre_tags');
         $my_tags = $practica->tags->pluck('id')->ToArray();
-        //dd($my_tags);
+
 
 
         return view('admin.practicas.edit',compact('users','tecnologias','practica','tags','my_tags'));

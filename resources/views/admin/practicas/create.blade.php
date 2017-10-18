@@ -20,18 +20,20 @@
         </div>
 
         @endif
+
         <!--Aqui va el formulario de la practica agricola-->
         {!! Form::open(['url' => 'admin/practicas','method' => 'POST','files'=> 'true','enctype' => 'multipart/form-data']) !!}
         <div class="form-group">
             {{ Form::label('Practica','Tema de la práctica agrícola') }}
-            {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Tema aquí...']) }}
+            {{ Form::text('nombre_practica','',['class' => 'form-control','placeholder' => 'Tema aquí...','required']) }}
         </div>
         <div class="form-group">
             {{ Form::label('tecnologia','Tipo de tecnológia') }}
-            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control'])}}
+            {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control','required'])}}
         </div>
         <div class="form-group">
-            {{ Form::textarea('contenido',null,[ 'id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
+            {{ Form::textarea('contenido',null,['id'=>'my-editor','class' => 'my-editor']) }}
+            @ckeditor('texto')
         </div>
 
         <div class="form-group">

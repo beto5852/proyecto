@@ -25,12 +25,12 @@
                 <!--Aqui va el formulario de la practica agricola-->
         {!! Form::open(['url' => 'admin/tecnologias', 'method' => 'POST']) !!}
         <div class="form-group">
-            {!! Form::label('nombre_tecnologia','Nombre de la tecnológia') !!}
-            {!! Form::text('nombre_tecnologia',null,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])!!}
+            {{ Form::label('nombre_tecnologia','Nombre de la tecnológia') }}
+            {{ Form::text('nombre_tecnologia',null,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])}}
         </div>
         <div class="form-group">
-            {!! Form::label('descripcion_tecnologia','Descripción de la tecnológia') !!}
-            {!! Form::textarea('descripcion_tecnologia',null,['class' =>'ckeditor'])!!}
+            {{ Form::label('descripcion_tecnologia','Descripción de la tecnológia') }}
+            {{ Form::textarea('descripcion_tecnologia','',['id'=>'my-editor','class' => 'my-editor'])}}
         </div>
 
         <div class="form-group text-right">

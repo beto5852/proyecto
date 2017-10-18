@@ -24,15 +24,17 @@
         @endif
 
                 <!--Aqui va el formulario de la practica agricola-->
-        {!! Form::open(['url' => ['admin/tecnologias',$tecnologia], 'method' => 'PUT']) !!}
+        {!! Form::open(['url' => ['admin/tecnologias',$tecnologias], 'method' => 'PUT']) !!}
         <div class="form-group">
-            {!! Form::label('nombre_tecnologia','Nombre de la tecnológia') !!}
-            {!! Form::text('nombre_tecnologia',$tecnologia->nombre_tecnologia,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])!!}
+
+            {{Form::label('nombre_tecnologia','Nombre de la tecnológia')}}
+            {{Form::text('nombre_tecnologia',$tecnologias->nombre_tecnologia,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])}}
+
         </div>
 
         <div class="form-group">
-            {!! Form::label('descripcion_tecnologia','Descripción') !!}
-            {{ Form::textarea('descripcion_tecnologia', $tecnologia->descripcion_tecnologia,['class' => 'ckeditor']) }}
+            {{Form::label('descripcion_tecnologia','Descripción')}}
+            {{ Form::textarea('descripcion_tecnologia', $tecnologias->descripcion_tecnologia,['id'=>'my-editor','class' => 'my-editor'])}}
         </div>
 
         <div class="form-group text-right">

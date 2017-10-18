@@ -26,8 +26,8 @@
                 <!--Aqui va el formulario de la practica agricola-->
         {!! Form::open(['url' => ['admin/practicas',$practica], 'method' => 'PUT','enctype' => 'multipart/form-data','files'=> 'true']) !!}
         <div class="form-group">
-            {!! Form::label('nombre_practica','Nombre de la labor agricola') !!}
-            {!! Form::text('nombre_practica',$practica->nombre_practica,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])!!}
+            {{ Form::label('nombre_practica','Nombre de la labor agricola') }}
+            {{ Form::text('nombre_practica',$practica->nombre_practica,['class' =>'form-control', 'placeholder' =>'Nombre practica','required'])}}
         </div>
 
         <div class="form-group">
@@ -36,8 +36,8 @@
         </div>
 
         <div class="form-group">
-            {!! Form::label('contenido','Descripción') !!}
-             {{ Form::textarea('contenido',$practica->contenido,['id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
+            {{ Form::label('contenido','Descripción') }}
+             {{  Form::textarea('contenido',$practica->contenido,['id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
         </div>
 
         <div class="form-group">

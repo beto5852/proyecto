@@ -129,3 +129,7 @@ Route::resource('login','LoginController');
 */
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

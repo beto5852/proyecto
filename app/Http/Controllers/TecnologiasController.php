@@ -76,8 +76,10 @@ class TecnologiasController extends Controller
     public function edit($id)
     {
         //
-        $tecnologia = Tecnologia::find($id);
-        return view('admin.tecnologias.edit',compact('tecnologia'));
+        $tecnologias = Tecnologia::find($id);
+
+
+        return view('admin.tecnologias.edit',compact('tecnologias'));
         //dd($tecnologias);
     }
 
@@ -91,6 +93,13 @@ class TecnologiasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $tecnologia = Tecnologia::find($id);
+        $tecnologia->fill($request->all());
+        $tecnologia->save();
+
+        Session::flash('message','Usuario actualizado correctamente');
+        return redirect::to('admin/tecnologias');
+
     }
 
     /**

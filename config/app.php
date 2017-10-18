@@ -177,6 +177,7 @@ return [
         Madcoda\Youtube\YoutubeServiceProviderLaravel5::class,
         Vinkla\Pusher\PusherServiceProvider::class,
         Fenos\Notifynder\NotifynderServiceProvider::class,
+        JeroenNoten\LaravelCkEditor\ServiceProvider::class,
 
         /*
          * Application Service Providers...
