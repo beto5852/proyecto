@@ -16,7 +16,7 @@
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('ckeditor/contents.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css">
 
 
 </head>
@@ -43,7 +43,7 @@
 
 </div>
 
-
+<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
 
@@ -62,9 +62,6 @@
     })
 
 </script>
-<script>
-    window.jQuery = window.$ = require('jquery');
-</script>
 
 <script>
       $('.chosen-select').chosen({width: "100%"});
@@ -79,7 +76,7 @@
 </script>
 
 <script>
-    CKEDITOR.replace('my-editor', options);
+    console.log(CKEDITOR.replace('my-editor', options));
 </script>
 
 
