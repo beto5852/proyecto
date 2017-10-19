@@ -10,21 +10,14 @@
 
     <title>APP INTA</title>
 
-    <!-- Styles -->
-    <!--
-    <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('/css/bootstrap-material-design.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('/css/ripples.min.css')}}" rel="stylesheet" type="text/css">
-
-
-    <link href="{{ url('/css/ripples.min.css') }}" rel="stylesheet">-->
-
-    <link href="{{asset('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.css">
+
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('css/bootstrap-material-design.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" >
+
+    <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="app">
@@ -56,18 +49,6 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
-<script src="https://code.jquery.com/jquery-3.1.0.slim.min.js" integrity="sha256-cRpWjoSOw5KcyIOaZNo4i6fZ9tKPhYYb6i5T9RSVJG8=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.js"></script>
 
-<script>
-    $.material.init();
-    $('.my_slider').carousel('next')({
-        interval: 1
-    })
-</script>
-
-<script src="/js/app.js"></script>
 </body>
 </html>

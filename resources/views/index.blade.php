@@ -10,12 +10,26 @@
     </ul>
 @endsection
 
+
 <div class="row">
-        <div class="jumbotron col-md-8"><h1>Labores Agrícolas de la semana</h1>
+
+    <div class="col-md-12">
+        <h1>Labores Agrícolas de la semana en base al ciclo productivo del pais</h1>
+    </div>
+
+
+</div>
+
+
+<div class="row">
+
+
+
+        <div class="jumbotron col-md-8">
 
             @foreach($practicas as $practica)
             <article>
-                <h2>{{$practica->nombre_practica}}</h2>
+                <h3>{{$practica->nombre_practica}}</h3>
                 <div class="row">
                     <div class="col-md-8">
                         <i class="fa fa-folder-open" aria-hidden="true"></i>{{$practica->tecnologia->nombre_tecnologia}}
@@ -33,7 +47,7 @@
                 @endif
                 <br>
                 <p>{!! substr($practica->contenido,0,200) !!} </p>
-                <p class="text-right"><a class="btn btn-primary btn-lg" href="{{'practica'}}/{{$practica->slug}}">Leer más..</a></p>
+                <p class="text-right"><a class="btn btn-raised btn-primary" href="{{'practica'}}/{{$practica->slug}}">Leer más..</a></p>
 
             </article>
             @endforeach
@@ -52,7 +66,7 @@
                     <div class="list-group">
                         <div class="list-group-item">
                             <div class="row-picture">
-                                <img class="circle" src="{{asset('img/cultivomaiz.jpg')}}" alt="icon">
+                                <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
                             </div>
                             <div class="row-content">
                                 <h4 class="list-group-item-heading">Tile with avatar</h4>
@@ -63,7 +77,7 @@
                         <div class="list-group-separator"></div>
                         <div class="list-group-item">
                             <div class="row-picture">
-                                <img class="circle" src="{{asset('img/cultivomaiz.jpg')}}" alt="icon">
+                                <img class="circle" src="http://lorempixel.com/56/56/people/6" alt="icon">
                             </div>
                             <div class="row-content">
                                 <h4 class="list-group-item-heading">Tile with another avatar</h4>
@@ -71,7 +85,7 @@
                                 <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
                             </div>
                         </div>
-                        <div class="list-group-separator"></div>
+
                     </div>
 
                 </div>
@@ -84,14 +98,14 @@
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Tecnologias</h3>
+                <h3 class="panel-title">Proximas Labores</h3>
             </div>
             <div class="panel-body">
 
                 <div class="list-group">
                     <div class="list-group-item">
                         <div class="row-picture">
-                            <img class="circle" src="{{asset('img/cultivomaiz.jpg')}}" alt="icon">
+                            <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
                         </div>
                         <div class="row-content">
                             <h4 class="list-group-item-heading">Tile with avatar</h4>
@@ -102,7 +116,7 @@
                     <div class="list-group-separator"></div>
                     <div class="list-group-item">
                         <div class="row-picture">
-                            <img class="circle" src="{{asset('img/cultivomaiz.jpg')}}" alt="icon">
+                            <img class="circle" src="http://lorempixel.com/56/56/people/6" alt="icon">
                         </div>
                         <div class="row-content">
                             <h4 class="list-group-item-heading">Tile with another avatar</h4>
@@ -110,12 +124,13 @@
                             <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
                         </div>
                     </div>
-                    <div class="list-group-separator"></div>
+
                 </div>
 
             </div>
         </div>
     </div>
+
 
 </div>
 

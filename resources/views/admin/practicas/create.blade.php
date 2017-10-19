@@ -32,13 +32,13 @@
             {{ Form::select('practica_id_tecnologia',$tecnologias,null,['class' => 'form-control','required'])}}
         </div>
         <div class="form-group">
-            {{ Form::textarea('contenido',null,['id'=>'my-editor','class' => 'my-editor']) }}
-            @ckeditor('texto')
+            {{ Form::textarea('contenido',null,['id' => 'my-editor','class' => 'my-editor']) }}
+
         </div>
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control select', 'multiple','required']) }}
+            {{ Form::select('pt_id_tags[]',$tags,null,['multiple','class'=>'form-control chosen-select','required']) }}
         </div>
         <div class="form-group">
             {{ Form::hidden('practica_id_usuario',Auth::user()->id,null,['class' => 'form-control'])}}
