@@ -15,6 +15,9 @@
 
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('ckeditor/contents.css')}}" rel="stylesheet" type="text/css">
+
 
 </head>
 <div id="app">
@@ -41,20 +44,17 @@
 </div>
 
 
-
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
-<script src="{{ asset('js/jquery-3.1.1.min.js') }}"></script>
 <script src="{{ asset('js/material.min.js') }}"></script>
 <script src="{{ asset('js/ripples.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
 
 <script>
     $(document).ready(function () {
@@ -62,28 +62,27 @@
     })
 
 </script>
+<script>
+    window.jQuery = window.$ = require('jquery');
+</script>
 
 <script>
-
+      $('.chosen-select').chosen({width: "100%"});
+</script>
+<script>
     var options = {
         filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
         filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
     };
-
 </script>
 
 <script>
-    $(document).ready(function () {
-        CKEDITOR.replace('my-editor', options);
-    })
-
+    CKEDITOR.replace('my-editor', options);
 </script>
 
-<script>
-      $('.chosen-select').chosen({width: "100%"});
-</script>
+
 
 
 </body>
