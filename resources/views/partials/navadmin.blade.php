@@ -61,6 +61,7 @@
             @endif
 
             <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="{{url('admin/eventos')}}"><i class="fa fa-calendar" aria-hidden="true"></i> Calendario</a></li>
                 <li class=""><a href="{{route('youtube')}}"><i class="fa fa-play" aria-hidden="true"></i> Videos</a></li>
                 <li><a href="{{route('home')}}" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> Ver sitio</a></li>
                 <li><a href="{{url('admin/notificaciones')}}" ><i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar mensaje</a></li>

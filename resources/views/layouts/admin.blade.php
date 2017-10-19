@@ -17,7 +17,8 @@
     <link href="{{asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('chosen/chosen.css')}}" rel="stylesheet" type="text/css">
-
+    <link href="{{asset('fullcalendar-3.5.1/fullcalendar.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('fullcalendar-3.5.1/fullcalendar.print.min.css')}}" rel="stylesheet" type="text/css" media='print'>
 
 </head>
 <div id="app">
@@ -44,6 +45,8 @@
 </div>
 
 <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+
+
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
 
@@ -56,12 +59,97 @@
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
 
+
+
+<script src="{{ asset('fullcalendar-3.5.1/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('fullcalendar-3.5.1//lib/moment.min.js') }}"></script>
+<script src="{{ asset('fullcalendar-3.5.1//fullcalendar.min.js') }}"></script>
+
 <script>
     $(document).ready(function () {
            $.material.init();
     })
 
 </script>
+
+<script>
+    $(document).ready(function() {
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            defaultDate: '2017-09-12',
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: '2017-09-01'
+                },
+                {
+                    title: 'Long Event',
+                    start: '2017-09-07',
+                    end: '2017-09-10'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2017-09-09T16:00:00'
+                },
+                {
+                    id: 999,
+                    title: 'Repeating Event',
+                    start: '2017-09-16T16:00:00'
+                },
+                {
+                    title: 'Conference',
+                    start: '2017-09-11',
+                    end: '2017-09-13'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2017-09-12T10:30:00',
+                    end: '2017-09-12T12:30:00'
+                },
+                {
+                    title: 'Lunch',
+                    start: '2017-09-12T12:00:00'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2017-09-12T14:30:00'
+                },
+                {
+                    title: 'Happy Hour',
+                    start: '2017-09-12T17:30:00'
+                },
+                {
+                    title: 'Dinner',
+                    start: '2017-09-12T20:00:00'
+                },
+                {
+                    title: 'Birthday Party',
+                    start: '2017-09-13T07:00:00'
+                },
+                {
+                    title: 'Click for Google',
+                    url: 'http://google.com/',
+                    start: '2017-09-28'
+                }
+            ]
+        });
+
+    });
+
+
+
+
+</script>
+
 
 <script>
       $('.chosen-select').chosen({width: "100%"});
@@ -76,7 +164,7 @@
 </script>
 
 <script>
-    console.log(CKEDITOR.replace('my-editor', options));
+    CKEDITOR.replace('my-editor', options);
 </script>
 
 
