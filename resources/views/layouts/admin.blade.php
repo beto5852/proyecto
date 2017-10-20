@@ -44,7 +44,7 @@
 
 </div>
 
-<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+
 
 
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
@@ -53,25 +53,25 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
+<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/material.min.js') }}"></script>
 <script src="{{ asset('js/ripples.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
-<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-
-
-
-<script src="{{ asset('fullcalendar-3.5.1/lib/moment.min.js') }}"></script>
-<script src="{{ asset('fullcalendar-3.5.1/js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ asset('fullcalendar-3.5.1/fullcalendar.min.js') }}"></script>
-<script src='{{ asset('fullcalendar-3.5.1/locale-all.js') }}'></script>
 <script>
     $(document).ready(function () {
-           $.material.init();
+        $.material.init();
     })
 
 </script>
+
+
+<script src="{{ asset('fullcalendar-3.5.1/js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('fullcalendar-3.5.1/lib/moment.min.js') }}"></script>
+
+<script src="{{ asset('fullcalendar-3.5.1/fullcalendar.min.js') }}"></script>
+<script src='{{ asset('fullcalendar-3.5.1/locale-all.js') }}'></script>
 
 @yield('script')
 
