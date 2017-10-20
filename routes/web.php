@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Notifications\PostNewNotification;
+//use App\Notifications\PostNewNotification;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,15 +38,22 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
  
     //Notification::send($user, new PostNewNotification($post));
-    Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
-    Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
+
+
+
+
+    Route::get('cargaEventos{id?}','CalendarController@index');
+    Route::post('guardaEventos', array('as' => 'guardaEventos','uses' => 'CalendarController@create'));
+    Route::post('actualizaEventos','CalendarController@update');
+    Route::post('eliminaEvento','CalendarController@delete');
  
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');
     Route::resource('/cultivos','CultivosController');
     Route::resource('/tags','TagsController');
-    Route::resource('/eventos','EventosController@index');
+    Route::resource('/calendar  ','EventosController');
+    //Route::get('api','EventosController@api'); //ruta que nos devuelve los eventos en formato json
 
 
     Route::get('notificaciones', [

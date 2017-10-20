@@ -10,5 +10,8 @@ class Evento extends Model
     protected $table ='events';
 
     protected $fillable = ['title','start','end','color'];
+    
+    protected $hidden = ['id'];
+
 
 }

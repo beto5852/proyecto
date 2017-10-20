@@ -16,14 +16,25 @@ class EventosController extends Controller
      */
     public function index()
     {
-        $eventos = Evento::pluck('title','start','color');
 
-       // dd($eventos->ToArray());
-        $array_events = $eventos->ToArray();
-       //eturn Response()->array_events;
-      //return Response()->json($array_events);
-      return view('admin.eventos.index',compact('array_events'));
+       // $eventos = \DB::table('events')->get(['title','start','color'])->ToArray();
+        
+        return view('admin.calendar.index');
+           //return view('admin.eventos.index',compact('eventos'));
+
     }
+
+
+    public function api()
+    {
+        $data = array(); //declaramos un array principal que va contener los datos
+        $data = Evento::get(['title','start','color']);
+        return response()->json($data); //para luego retornarlo y estar listo para consumirlo
+
+    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
