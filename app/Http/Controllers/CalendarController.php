@@ -10,6 +10,8 @@ class CalendarController extends Controller
 {
     public function index()
     {
+
+        $borde = array();
         $data = array(); //declaramos un array principal que va contener los datos
         $id = Fullcalendarevento::all()->pluck('id'); //listamos todos los id de los eventos
         $titulo = Fullcalendarevento::all()->pluck('titulo'); //lo mismo para lugar y fecha
