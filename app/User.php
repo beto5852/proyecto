@@ -7,11 +7,12 @@ namespace App;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
+use Fenos\Notifynder\Traits\NotifableLaravel53 as NotifableTrait; // for Laravel 5.3+
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Authorizable, CanResetPassword;
+    use Notifiable, Authorizable, CanResetPassword, NotifableTrait;
 
     /**
      * The attributes that are mass assignable.
