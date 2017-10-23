@@ -44,16 +44,12 @@ class FrontController extends Controller
             $variable->save();
         }
         */  
-        
-        
-        
-                
-        
-        
-        
+
         
         $practicas = Practica::OrderBy('id','DESC')->paginate(5);
-        return view('admin.home.index',compact('practicas','totalusers','totaltecnologias','totalpracticas','totalcultivos','users'));
+
+        $tecnologias = Tecnologia::OrderBy('id','DESC')->paginate(5);
+        return view('admin.home.index',compact('practicas','totalusers','totaltecnologias','totalpracticas','totalcultivos','users','tecnologias'));
     }
     public function  practica($slug){
         //$practicas = Practica::find($slug);

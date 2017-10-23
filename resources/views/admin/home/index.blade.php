@@ -29,7 +29,7 @@
 
                 <div class="jumbotron col-md-3">
 
-                    <div class="panel panel-primary">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title">Listar opciones</h3>
                         </div>
@@ -77,7 +77,7 @@
 
                 <div class="col-md-8">
                     <!-- Website Overview -->
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading main-color-bg">
                             <h3 class="panel-title">Reportes</h3>
                         </div>
@@ -110,7 +110,7 @@
                     </div>
 
                     <!-- Latest Users -->
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading">
                             <h3 class="panel-title">Ultimos usuarios agregados</h3>
                         </div>
@@ -141,34 +141,66 @@
                     </div>
                 </div>
 
-            <!-- Latest tecnologias -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Ultimos usuarios agregados</h3>
-                </div>
-                <div class="panel-body">
-                    <table class="table table-striped table-hover" >
-                        <thead>
-                        <tr class="success">
+                 <div class="col-md-11">
+                    <!-- Latest tecnologias -->
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ultimos prácticas registradas</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-hover" >
+                                <thead>
+                                <tr class="success">
 
-                            <th>Nombre y Apellidos</th>
-                            <th>credo por</th>
-                            <th>Fecha</th>
+                                    <th>Nombre y Apellidos</th>
+                                    <th>credo por</th>
+                                    <th>Fecha</th>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($practicas as $practica)
-                            <tr class="info">
-                                <td>{{  substr($practica->nombre_practica,0,50)}}</td>
-                                <td>{{  $practica->user['name']}}</td>
-                                <td>{{  $practica->created_at}}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($practicas as $practica)
+                                    <tr class="info">
+                                        <td>{{  substr($practica->nombre_practica,0,50)}}</td>
+                                        <td>{{  $practica->user['name']}}</td>
+                                        <td>{{  $practica->created_at}}</td>
+
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                                <ul class="pager"><center>{{ $users->links() }}</center></ul>
+                            </table>
+                        </div>
+                    </div>
+                  </div>
+            <div class="col-md-11">
+                <!-- Latest tecnologias -->
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Ultimos tecnologias registradas</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover" >
+                            <thead>
+                            <tr class="success">
+
+                                <th>Nombre y Apellidos</th>
+                                <th>Fecha</th>
 
                             </tr>
-                        @endforeach
-                        </tbody>
-                        <ul class="pager"><center>{{ $users->links() }}</center></ul>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach($tecnologias as $tecnologia)
+                                <tr class="info">
+                                    <td>{{  substr($tecnologia->nombre_tecnologia,0,50)}}</td>
+                                    <td>{{  $tecnologia->created_at}}</td>
+
+                                </tr>
+                            @endforeach
+                            </tbody>
+                            <ul class="pager"><center>{{ $users->links() }}</center></ul>
+                        </table>
+                    </div>
                 </div>
             </div>
 
