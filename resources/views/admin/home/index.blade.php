@@ -75,7 +75,7 @@
 
 
 
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <!-- Website Overview -->
                     <div class="panel panel-default">
                         <div class="panel-heading main-color-bg">
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="well dash-box">
-                                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
+                                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 0</h2>
                                     <h4>Visitantes</h4>
                                 </div>
                             </div>
@@ -140,6 +140,39 @@
                         </div>
                     </div>
                 </div>
+
+            <!-- Latest tecnologias -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Ultimos usuarios agregados</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped table-hover" >
+                        <thead>
+                        <tr class="success">
+
+                            <th>Nombre y Apellidos</th>
+                            <th>credo por</th>
+                            <th>Fecha</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($practicas as $practica)
+                            <tr class="info">
+                                <td>{{  substr($practica->nombre_practica,0,50)}}</td>
+                                <td>{{  $practica->user['name']}}</td>
+                                <td>{{  $practica->created_at}}</td>
+
+                            </tr>
+                        @endforeach
+                        </tbody>
+                        <ul class="pager"><center>{{ $users->links() }}</center></ul>
+                    </table>
+                </div>
+            </div>
+
+
             </div>
     </section>
 

@@ -30,7 +30,7 @@ class FrontController extends Controller
     public function  admin(){
 
         $totalusers = User::all();
-        $users = User::orderBy('id','DESC')->paginate(6);
+        $users = User::orderBy('id','DESC')->paginate(5);
         $totaltecnologias = Tecnologia::all();
         $totalpracticas = Practica::all();
         $totalcultivos = Practica::all();
@@ -52,7 +52,7 @@ class FrontController extends Controller
         
         
         
-        $practicas = Practica::OrderBy('id','DESC')->paginate(3);
+        $practicas = Practica::OrderBy('id','DESC')->paginate(5);
         return view('admin.home.index',compact('practicas','totalusers','totaltecnologias','totalpracticas','totalcultivos','users'));
     }
     public function  practica($slug){
