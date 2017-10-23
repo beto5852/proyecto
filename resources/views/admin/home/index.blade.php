@@ -3,9 +3,15 @@
 @section('title','<i class="fa fa-home" aria-hidden="true"></i>'.' '.'Bienvenido')
 
 @section('breadcrumb')
-    <ul class="breadcrumb" style="margin-bottom: 5px;">
-        <li>{!! Breadcrumbs::render('home') !!}</li>
-    </ul>
+
+    <section id="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="active">{!! Breadcrumbs::render('home') !!}</li>
+            </ol>
+        </div>
+    </section>
+
 @endsection
 
 @section('content')
@@ -17,66 +23,155 @@
         </div>
     @endif
 
-    <div class="row">
+    <section id="main">
+        <div class="container">
 
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
+
+                <div class="jumbotron col-md-3">
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Listar opciones</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="col-md-15">
+
+                                <div class="list-group">
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><i class="fa fa-list" aria-hidden="true"></i> Tegnológias <span class="badge">{!! $totalusers->count() !!}</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><i class="fa fa-list" aria-hidden="true"></i> Prácticas <span class="badge">{!! $totaltecnologias->count() !!}</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><i class="fa fa-list" aria-hidden="true"></i> Cultivos <span class="badge">{!! $totalcultivos->count() !!}</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Etapas <span class="badge">12</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><i class="fa fa-tags" aria-hidden="true"></i> Tags <span class="badge">33</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+                                    <div class="list-group-item">
+                                        <a href="#" class="list-group-item"><i class="fa fa-calendar" aria-hidden="true"></i></span> Calendario <span class="badge">203</span></a>
+                                    </div>
+                                    <div class="list-group-separator"></div>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with avatar</h4>
 
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
+
+
+                <div class="col-md-9">
+                    <!-- Website Overview -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading main-color-bg">
+                            <h3 class="panel-title">Reportes</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {!! $totalusers->count() !!}</h2>
+                                    <h4>Usuarios</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> {!! $totaltecnologias->count() !!}</h2>
+                                    <h4>Tecnológias</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> {!! $totalpracticas->count() !!}</h2>
+                                    <h4>Prácticas</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="well dash-box">
+                                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
+                                    <h4>Visitantes</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Latest Users -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ultimos usuarios</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-hover">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Joined</th>
+                                </tr>
+                                <tr>
+                                    <td>Jill Smith</td>
+                                    <td>jillsmith@gmail.com</td>
+                                    <td>Dec 12, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Eve Jackson</td>
+                                    <td>ejackson@yahoo.com</td>
+                                    <td>Dec 13, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>jdoe@gmail.com</td>
+                                    <td>Dec 13, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Stephanie Landon</td>
+                                    <td>landon@yahoo.com</td>
+                                    <td>Dec 14, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Johnson</td>
+                                    <td>mjohnson@gmail.com</td>
+                                    <td>Dec 15, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Stephanie Landon</td>
+                                    <td>landon@yahoo.com</td>
+                                    <td>Dec 14, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Johnson</td>
+                                    <td>mjohnson@gmail.com</td>
+                                    <td>Dec 15, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Stephanie Landon</td>
+                                    <td>landon@yahoo.com</td>
+                                    <td>Dec 14, 2016</td>
+                                </tr>
+                                <tr>
+                                    <td>Mike Johnson</td>
+                                    <td>mjohnson@gmail.com</td>
+                                    <td>Dec 15, 2016</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/6" alt="icon">
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with another avatar</h4>
-
-                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="row">
-
-        <div class="list-group">
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/1" alt="icon">
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with avatar</h4>
-
-                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
-                </div>
-            </div>
-            <div class="list-group-separator"></div>
-            <div class="list-group-item">
-                <div class="row-picture">
-                    <img class="circle" src="http://lorempixel.com/56/56/people/6" alt="icon">
-                </div>
-                <div class="row-content">
-                    <h4 class="list-group-item-heading">Tile with another avatar</h4>
-
-                    <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
+    </section>
 
 
     <footert>

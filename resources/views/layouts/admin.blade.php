@@ -25,9 +25,12 @@
 
     @include('partials.navadmin')
 
+
+
     <div class="container">
 
         @yield('breadcrumb')
+
 
         <div class="panel panel-primary">
             <div class="panel-heading">
@@ -54,11 +57,12 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
+
 <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/material.min.js') }}"></script>
 <script src="{{ asset('js/ripples.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
 <script>
     $(document).ready(function () {
         $.material.init();

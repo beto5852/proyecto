@@ -7,6 +7,8 @@ use App\Notifications;
 use App\Tecnologia;
 use App\Practica;
 use App\User;
+use App\Cultivo;
+use Cache;
 
 
 
@@ -20,13 +22,37 @@ class FrontController extends Controller
     public function index()
     {
         //
+
         $practicas = Practica::OrderBy('id','DESC')->paginate(3);
         return view('index', compact('practicas'));
     }
 
     public function  admin(){
+
+        $totalusers = User::all();
+        $totaltecnologias = Tecnologia::all();
+        $totalpracticas = Practica::all();
+        $totalcultivos = Practica::all();
+      //d( $totalusers->count());
+
+
+       /* $variable = nameModelo::find($id);
+        if(Cache::has($id)==false){
+            Cache::add($id,'contador',0.30);
+            $variable->total_visitas++;
+            $variable->save();
+        }
+        */  
+        
+        
+        
+                
+        
+        
+        
+        
         $practicas = Practica::OrderBy('id','DESC')->paginate(3);
-        return view('admin.home.index',compact('practicas'));
+        return view('admin.home.index',compact('practicas','totalusers','totaltecnologias','totalpracticas','totalcultivos'));
     }
     public function  practica($slug){
         //$practicas = Practica::find($slug);

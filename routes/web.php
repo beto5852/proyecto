@@ -41,11 +41,6 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
 
 
 
-
-    Route::get('cargaEventos{id?}','CalendarController@index');
-    Route::post('guardaEventos', array('as' => 'guardaEventos','uses' => 'CalendarController@create'));
-    Route::post('actualizaEventos','CalendarController@update');
-    Route::post('eliminaEvento','CalendarController@delete');
  
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
