@@ -37,12 +37,12 @@
 
         <div class="form-group">
             {{ Form::label('contenido','Descripción') }}
-             {{  Form::textarea('contenido',$practica->contenido,['id' => 'article-ckeditor','class' => 'article-ckeditor']) }}
+             {{  Form::textarea('contenido',$practica->contenido,['id' => 'my-ckeditor','class' => 'my-ckeditor']) }}
         </div>
 
         <div class="form-group">
             {{ Form::label('pt_id_tags','Tags') }}
-            {{ Form::select('pt_id_tags[]',$tags,$my_tags,['class'=>'form-control select', 'multiple select']) }}
+            {{ Form::select('pt_id_tags[]',$tags,$my_tags,['class'=>'form-control chosen-select', 'multiple', 'required' ]) }}
         </div>
 
         <div class="form-group">
