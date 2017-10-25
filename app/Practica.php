@@ -61,7 +61,9 @@ class Practica extends Model
     {
         return $this->belongsToMany('App\Tag','pt','practica_id','tag_id');
     }
-
+    public function scopeSearch($query,$nombre_practica){
+        return $query->where('nombre_practica','LIKE',"%$nombre_practica%" );
+    }
 
 
 

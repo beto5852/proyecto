@@ -31,11 +31,11 @@ class PracticasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //mostrar algunos Productos
         
-        $practicas = Practica::orderBy('id','DESC')->paginate(4);
+        $practicas = Practica::Search($request->search)->orderBy('id','DESC')->paginate(4);
         return view("admin.practicas.index",['practicas' => $practicas]);
     }
 

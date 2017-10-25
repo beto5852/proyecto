@@ -75,7 +75,7 @@
 
 
 
-                <div class="col-md-8">
+                <div class="jumbotron col-md-8">
                     <!-- Website Overview -->
                     <div class="panel panel-success">
                         <div class="panel-heading main-color-bg">
@@ -141,7 +141,7 @@
                     </div>
                 </div>
 
-                 <div class="col-md-11">
+                 <div class="jumbotron col-md-11">
                     <!-- Latest tecnologias -->
                     <div class="panel panel-success">
                         <div class="panel-heading">
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                   </div>
-            <div class="col-md-11">
+            <div class="jumbotron col-md-11">
                 <!-- Latest tecnologias -->
                 <div class="panel panel-success">
                     <div class="panel-heading">

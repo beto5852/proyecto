@@ -27,8 +27,9 @@
         <div class="col-xs-2">
             {!! Form::open(['url' => ['admin/practicas'], 'method' => 'GET', 'class' => 'navbar-form navbar-left', 'aria-describedby' => 'search']) !!}
 
-            <div class="form-group">
-                {!! Form::text('search',null,['class' =>'form-control', 'placeholder' =>'Buscar','required'])!!}
+            <div class="input-group">
+                {!! Form::text('search',null,['class' =>'form-control', 'placeholder' =>'Buscar','aria-describedby' => 'search'])!!}
+                <span id="search" class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
             </div>
 
             {!! Form::close() !!}
@@ -73,9 +74,5 @@
     </table>
        <center>{{ $practicas->links() }}</center>
 
-        <div class="floating">
-            <a href="{{url('admin/practicas/create')}}" class="btn btn-primary btn-fab">
-                <i class="material-icons">add</i>
-            </a>
-        </div>
+
 @endsection

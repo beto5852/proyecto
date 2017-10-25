@@ -92,9 +92,9 @@
                         <a href="#" class="btn btn-primary btn-raised" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Agregar</a>
                         <a href="bootstrap-elements.html" data-target="#" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Agregar Mes</a></li>
+                            <li><a href="#">Agregar Semana</a></li>
                             <li><a href="#">Agregar Tecnologia</a></li>
-                            <li><a href="#">Agregar Practica</a></li>
-                            <li><a href="#">Agregar Cultivo</a></li>
                         </ul>
                     </div>
 

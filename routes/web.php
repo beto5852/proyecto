@@ -39,9 +39,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function () {
  
     //Notification::send($user, new PostNewNotification($post));
 
+    Route::get('/laravel-filemanager', '\Unisharp\Laravelfilemanager\controllers\LfmController@show');
+    Route::post('/laravel-filemanager/upload', '\Unisharp\Laravelfilemanager\controllers\UploadController@upload');
 
 
- 
     Route::resource('/users','UsersController');
     Route::resource('/tecnologias','TecnologiasController');
     Route::resource('/practicas','PracticasController');

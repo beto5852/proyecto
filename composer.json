@@ -17,7 +17,8 @@
         "pusher/pusher-php-server": "~2.6",
         "unisharp/laravel-ckeditor": "^4.6",
         "unisharp/laravel-filemanager": "^1.8",
-        "vinkla/pusher": "^2.4"
+        "vinkla/pusher": "^2.4",
+        "yajra/laravel-datatables-oracle": "~6.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

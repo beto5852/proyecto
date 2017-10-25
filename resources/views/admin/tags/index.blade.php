@@ -41,7 +41,7 @@
 
             <table class="table table-striped table-hover" >
 
-                    <thead>
+                    <thead class="col-md-6">
                     <tr >
                         <th>ID</th>
                         <th>Nombre Tag</th>

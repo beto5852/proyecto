@@ -44,6 +44,9 @@ class User extends Authenticatable
     public function telefonos(){
         return $this->hasMany('App\Telefono');
     }
-
+    
+    public function scopeSearch($query,$name){
+        return $query->where('name','LIKE',"%$name%" );
+    }
 
 }

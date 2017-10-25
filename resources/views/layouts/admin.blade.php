@@ -37,7 +37,7 @@
                 <h3 class="panel-title"> @yield('title')</h3>
             </div>
 
-            <div class="panel-body">
+            <div class="jumbotron panel-body">
 
                 @yield('content')
             </div>
@@ -63,6 +63,11 @@
 <script src="{{ asset('js/ripples.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('chosen/chosen.jquery.js') }}"></script>
+
+
+<script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+
+
 <script>
     $(document).ready(function () {
         $.material.init();

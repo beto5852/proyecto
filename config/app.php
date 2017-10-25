@@ -170,7 +170,6 @@ return [
         //
         Collective\Html\HtmlServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
-        Unisharp\Ckeditor\ServiceProvider::class,
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
@@ -178,6 +177,7 @@ return [
         Vinkla\Pusher\PusherServiceProvider::class,
         Fenos\Notifynder\NotifynderServiceProvider::class,
         JeroenNoten\LaravelCkEditor\ServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -242,6 +242,7 @@ return [
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Youtube'   => Madcoda\Youtube\Facades\Youtube::class,
         'Notifynder' => Fenos\Notifynder\Facades\Notifynder::class,
+        
     ],
 
 ];

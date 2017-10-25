@@ -25,12 +25,12 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-       $users = User::orderBy('id','DESC')->paginate(6);
+       $users = User::Search($request->search)->orderBy('id','DESC')->paginate(6);
        // dd($users);
-       return view("admin.users.index",['users' => $users]);
+       return view("admin.users.index",compact('users'));
 
     }
 

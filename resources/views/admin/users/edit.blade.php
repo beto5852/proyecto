@@ -25,31 +25,48 @@
 
                 <!--Aqui va el formulario de la practica agricola-->
         {!! Form::open(['url' => ['admin/users',$user], 'method' => 'PUT']) !!}
-        <div class="form-group">
-            {!! Form::label('name','Nombre') !!}
-            {!! Form::text('name',$user->name,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])!!}
-        </div>
-
-        <div class="form-group">
-            {!! Form::label('email','Correo electrónico') !!}
-            {!! Form::email('email',$user->email,['class' =>'form-control', 'placeholder' =>'example@gmail.com','required'])!!}
-        </div>
 
 
-        <div class="form-group">
-            {{ Form::label('sexo','Sexo') }}
-            {{ Form::select('sexo',['' => 'Seleccione una opción' , 'masculino' => 'mascúlino', 'femenino' => 'femenino'],$user->sexo,['class' => 'form-control'])}}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {!! Form::label('name','Nombre') !!}
+                    {!! Form::text('name',$user->name,['class' =>'form-control', 'placeholder' =>'Nombre Completo','required'])!!}
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {!! Form::label('email','Correo electrónico') !!}
+                    {!! Form::email('email',$user->email,['class' =>'form-control', 'placeholder' =>'example@gmail.com','required'])!!}
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
-            {{ Form::label('type','Tipo de usuario') }}
-            {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],$user->type,['class' => 'form-control'])}}
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ Form::label('sexo','Sexo') }}
+                    {{ Form::select('sexo',['' => 'Seleccione una opción' , 'masculino' => 'mascúlino', 'femenino' => 'femenino'],$user->sexo,['class' => 'form-control'])}}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{ Form::label('type','Tipo de usuario') }}
+                    {{ Form::select('type',['' => 'Seleccione tipo de usuario' , 'miembro' => 'miembro', 'admin' => 'admin'],$user->type,['class' => 'form-control'])}}
+                </div>
+
+            </div>
+
         </div>
+
+
 
         <div class="form-group text-right">
 
-            <a href="{{url('admin/users')}}" class="btn btn-info" >Lista de usuarios</a>
-            {{ Form::submit('Actualizar', ['class' => 'btn btn-info']) }}
+            <a href="{{url('admin/users')}}" class="btn btn-raised btn-primary" >Lista de usuarios</a>
+            {{ Form::submit('Actualizar', ['class' => 'btn btn-raised btn-success']) }}
 
         </div>
         {!! Form::close() !!}
