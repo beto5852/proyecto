@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cultivo;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -56,9 +57,11 @@ class PracticasController extends Controller
         $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
 
         $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');
+        
+        $cultivos = Cultivo::orderBy('nombre_cultivo','ASC')->pluck('nombre_cultivo','id');
 
 
-        return view('admin.practicas.create',compact('tecnologias','tags'));
+        return view('admin.practicas.create',compact('tecnologias','tags','cultivos'));
 
        /* $tecnologias = Tecnologia::orderBy('nombre_tecnologia','ASC')->pluck('nombre_tecnologia','id');
         $tags  = Tag::orderBy('nombre_tags','ASC')->pluck('nombre_tags','id');

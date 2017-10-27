@@ -38,7 +38,7 @@
     <table class="table table-striped table-hover" >
         <thead>
         <tr >
-            <th>Labor agricola</th>
+            <th>Lista de cultivos</th>
         </tr>
         </thead>
         <tbody>

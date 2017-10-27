@@ -30,8 +30,8 @@
         </div>
 
         <div class="form-group text-right">
-            <a href="{{url('admin/tags')}}" class="btn btn-info">ver lista de tecnologias</a>
-            {{ Form::submit('Registrar', ['class' => 'btn btn-info']) }}
+            <a href="{{url('admin/tags')}}" class="btn btn-raised btn-primary">ver lista de tecnologias</a>
+            {{ Form::submit('Registrar', ['class' => 'btn btn-raised btn-success']) }}
 
         </div>
         {!! Form::close() !!}

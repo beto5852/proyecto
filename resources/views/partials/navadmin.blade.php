@@ -34,8 +34,8 @@
                             <li><a href="{{url('admin/tecnologias/create')}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Crear tecnologia</a></li>
                             <li><a href="{{url('admin/tecnologias/')}}"><i class="fa fa-list" aria-hidden="true"></i> Listar tecnologia</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Cultivo</a></li>
-                            <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> Listar cultivos</a></li>
+                            <li><a href="{{url('admin/cultivos/create')}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar Cultivo</a></li>
+                            <li><a href="{{url('admin/cultivos/')}}"><i class="fa fa-list" aria-hidden="true"></i> Listar cultivos</a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i> Agregar etapa de siembra</a></li>
                             <li><a href="#"><i class="fa fa-list" aria-hidden="true"></i> Listar etapas de siembra</a></li>
@@ -92,7 +92,7 @@
                         <a href="#" class="btn btn-primary btn-raised" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Agregar</a>
                         <a href="bootstrap-elements.html" data-target="#" class="btn btn-primary btn-raised dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Agregar Mes</a></li>
+                            <li><a type="button" data-toggle="modal" data-target="#addPage">Agregar Mes</a></li>
                             <li><a href="#">Agregar Semana</a></li>
                             <li><a href="#">Agregar Tecnologia</a></li>
                         </ul>
@@ -106,9 +106,37 @@
 
 
 
+<!-- Add Page -->
+<div class="modal fade" id="addPage" tabindex="" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" >
+
+            {!! Form::open(['url' => 'admin/tags', 'method' => 'POST']) !!}
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        {!! Form::label('nombre_tags','Nombre del Tags') !!}
+                        {!! Form::text('nombre_tags',null,['class' =>'form-control', 'placeholder' =>'Nombre','required'])!!}
+                    </div>
+                </div>
 
 
+            </div>
+            <div class="form-group text-right">
+                <a href="{{url('admin/tags')}}" class="btn btn-raised btn-primary">ver lista de tecnologias</a>
+                {{ Form::submit('Registrar', ['class' => 'btn btn-raised btn-success']) }}
 
+            </div>
+            {!! Form::close() !!}
+
+        </div>
+    </div>
+</div>
+
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
 
 
 

@@ -42,6 +42,7 @@
                     {{ Form::select('pt_id_tags[]',$tags,null,['class'=>'form-control chosen-select','multiple','required']) }}
                 </div>
             </div>
+
         </div>
 
 
